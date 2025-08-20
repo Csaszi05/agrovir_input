@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <title>Input+ - Agrovir</title>
     <style>
         * {
@@ -15,7 +17,7 @@
         }
 
         body {
-            font-family: 'Rubik Light', system-ui, -apple-system, sans-serif;
+            font-family: 'Rubik', sans-serif;
             line-height: 1.6;
             color: #333;
             scroll-behavior: smooth;
@@ -874,14 +876,129 @@
 
 
     </style>
+    <!-- Csempék -->
+    <style>
+        .folyamat {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #FFFFFF;
+            padding-bottom: 5rem;
+        }
+        .folyamat-wrapper {
+            position: relative;
+            height: 400vh; /* 5 képernyőnyi görgetési tartomány */
+            }
+            .folyamat{
+        position: sticky; top: 0; height: 100vh;
+        background:#fff; z-index: 2; /* takarja a mögötte lévőt */
+        display:flex; flex-direction:column; justify-content:center; gap:24px;
+}
+    
+
+
+        .folyamat h3 {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 700;
+            text-align: center;
+            font-size: 2.2rem;
+            line-height: 42px;
+            color: #0B0D0F;
+            margin-top: 5rem;
+            margin-bottom: 3rem;
+        }
+        .folyamat-text-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .folyamat-text {
+            max-width: 60%;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 26px;
+            color: #666;
+            text-align: center;
+            margin-left: 10rem;
+            margin-right: 10rem;
+
+        }
+        .stepper-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 4rem;
+            width: 100%;
+            
+        }
+
+        .stepper {
+            width: 60rem;
+            height: 10px;
+            background: #FFFFFF;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .stepper-bar {
+            height: 100%;
+            background: #22C373;   
+            width: 0%;  
+            transition: width 0.4s ease;
+            border-radius: 5px;
+        }
+
+        .roadmap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            padding: 0 2rem;
+            justify-content: center;
+            gap: 50px
+        }
+
+        .roadmap-item {
+            text-align: center;
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .roadmap-item h4 {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            margin-top: 0.5rem;
+        }
+
+        .roadmap-item .roadmap-icon {
+            width: 90px;
+            height: 90px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+        }
+
+       .is-active{
+        color: #22C373 !important;
+       }
+       .not-active{
+        color: #798286 !important;
+       }
+
+    </style>
 </head>
 
 
 <body>
-    <!-- Header -->
-    
-
-    <!-- Carousel -->
+    <!-- Hero -->
     <section class="carousel" id="carousel">
         <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
             <div class="container">
@@ -940,355 +1057,163 @@
         </div>
     </section>
 
-    <!-- Service Cards -->
-
-    <section class="service-cards" style="padding-top: 5rem; padding-bottom: 5rem;">
-        <div class="card" data-aos="fade-left" data-aos-delay="300" data-aos-offset="0">
-          <img src="https://m.blog.hu/ch/chatnyelvstudio/image/.external/.thumbs/d48f4e72626a6589ca09400a42061ce8_d49afe6e3b4eb7cadfe308837303ec67.jpg" alt="Ajánlatkérés">
-          <div class="label">Ajánlatkérés</div>
-          <div class="overlay">Egyszerűen kérjen ajánlatot több beszállítótól egyszerre. Automatikus árösszehasonlítás és gyors válaszidő garantált.</div>
+    <!-- Csempék  -->
+    <section class="folyamat-wrapper">
+    <section class="folyamat" id="folyamat">
+        <h3>Egyszerű rendelési folyamat</h3>
+        <div class="folyamat-text-container">
+            <p class="folyamat-text">
+                Az Input+ platformon keresztül egyszerűen és gyorsan rendelhet be minden szükséges inputanyagot. A felhasználóbarát felületünkön könnyedén böngészhet a termékek között, összehasonlíthatja az árakat és leadhatja rendelését egyetlen kattintással.
+            Ez a szöveg ami itt van ez fog változni
+            </p>
         </div>
-        <div class="card" data-aos="fade-left" data-aos-delay="300" data-aos-offset="0">
-          <img src="https://www.allrecipes.com/thmb/kUcEZOfcSjjzyHPi0fylqIirebQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/buggy-vs-shopping-cart-4x3-getty-1391485356-ecdcb56b93fa4594bae205e6acc4ed94.jpg" alt="Rendelés">
-          <div class="label">Rendelés</div>
-          <div class="overlay">Helyezze le rendelését online, egyértelmű árakkal és szállítási információkkal. Követheti rendelése állapotát valós időben.</div>
+        <div class="stepper-container">
+            <div class="stepper">
+                <div class="stepper-bar" style="width: 60%"></div>
+            </div>
         </div>
-        <div class="card" data-aos="fade-left" data-aos-delay="300" data-aos-offset="0">
-          <img src="https://eliteextra.com/wp-content/uploads/2022/07/AdobeStock_301640628-1200x800.jpeg" alt="Szállítás">
-          <div class="label">Szállítás</div>
-          <div class="overlay">Országos szállítási hálózat megbízható partnerekkel. Rugalmas szállítási időpontok és versenyképes árak.</div>
-        </div>
-      </section>
 
-      <!-- Features Grid -->
-
-      <section class="feature-grid">
-        <!-- 1 -->
-        <div class="feature-card">
-          <img src="https://img.icons8.com/?size=100&id=8402&format=png&color=000000" alt="Input ikon" />
-          <h3>Átlátható árak</h3>
-          <p>Megmutatjuk a piaci árak alakulását, hogy mindig a legjobb döntést hozd.</p>
-        </div>
-      
-        <!-- 2 -->
-        <div class="feature-card">
-          <img src="https://img.icons8.com/ios-filled/100/delivery.png" alt="Szállítás ikon" />
-          <h3>Gyors szállítás</h3>
-          <p>A rendeléseket rugalmasan és időben juttatjuk el hozzád.</p>
-        </div>
-      
-        <!-- 3 -->
-        <div class="feature-card">
-          <img src="https://img.icons8.com/ios-filled/100/money.png" alt="Költség ikon" />
-          <h3>Költségoptimalizálás</h3>
-          <p>Segítünk csökkenteni a beszerzési költségeidet.</p>
-        </div>
-      
-        <!-- 4 -->
-        <div class="feature-card">
-          <img src="https://img.icons8.com/ios-filled/100/farmer-male.png" alt="Gazda ikon" />
-          <h3>Gazdákra szabva</h3>
-          <p>Kifejezetten mezőgazdasági inputanyagokra fejlesztve.</p>
-        </div>
-      
-        <!-- 5 -->
-        <div class="feature-card">
-          <img src="https://img.icons8.com/ios-filled/100/security-checked.png" alt="Biztonság ikon" />
-          <h3>Biztonságos vásárlás</h3>
-          <p>Teljes körű adatvédelem és biztonságos tranzakciók.</p>
-        </div>
-      
-        <!-- 6 -->
-        <div class="feature-card">
-          <img src="https://img.icons8.com/?size=100&id=wdfmkgweCGDk&format=png&color=000000" alt="Elemzés ikon" />
-          <h3>Piaci elemzés</h3>
-          <p>Friss piaci trendek és statisztikák minden vásárláshoz.</p>
-        </div>
-      </section>
-      
-      <style>
-      .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* mindig 3 oszlop */
-        gap: 24px;
-        padding: 40px 20px;
-        margin-left: 100px;
-        margin-right: 100px;
-      }
-      
-      .feature-card {
-        background: #f5f5f7;
-        border-radius: 24px;
-        padding: 32px 20px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-      
-      .feature-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-      }
-      
-      .feature-card img {
-        width: 60px;
-        margin-bottom: 16px;
-      }
-      
-      .feature-card h3 {
-        font-size: 1.25rem;
-        margin-bottom: 8px;
-        color: #111;
-      }
-      
-      .feature-card p {
-        font-size: 0.95rem;
-        color: #555;
-        line-height: 1.4;
-      }
-      
-      /* Mobilbarát */
-      @media (max-width: 900px) {
-        .feature-grid {
-          grid-template-columns: repeat(2, 1fr); /* tablet: 2 oszlop */
-          margin-left: 30px;
-          margin-right: 30px;
-        }
-      }
-      @media (max-width: 600px) {
-        .feature-grid {
-          grid-template-columns: 1fr; /* mobil: 1 oszlop */
-          margin-left: 15px;
-          margin-right: 15px;
-        }
-      }
-      </style>
-      
-
-
-
-    
-    <!-- Price Watcher -->
-    <section class="section section-gray" id="pricing">
-        <div class="container">
-            <div class="price-watcher">
-                <div data-aos="fade-left" style="display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
-                    <svg style="width: 40px; height: 40px; fill: #27ae60; margin-right: 0.75rem;" viewBox="0 0 24 24">
-                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
-                        <polyline points="17 6 23 6 23 12"></polyline>
-                    </svg>
-                    <h2 class="section-title" style="margin: 0;" >Árfigyelő</h2>
-                </div>
-
-                <p class="section-subtitle" data-aos="fade-right">Állítsa be az árfigyelési tartományt és értesítést kap az aktuális piaci árakról</p>
-
-                <div class="price-watcher-card" data-aos="fade-left">
-                    <div>
-                        <label style="display: block; font-weight: 500; margin-bottom: 1rem; font-size: 1.5rem;">Árfigyelési tartomány</label>
-                        <div class="range-container">
-                            <div id="price-slider"></div>
-                          </div>
-                          
-                        <div class="range-labels">
-                            <span>0</span>
-                            <span>50</span>
-                            <span>100</span>
-                        </div>
-                    </div>
-
-                    <div class="range-values">
-                        <div>
-                            <span style="color: #666; font-size: 0.875rem;">Minimum:</span>
-                            <span class="range-value" id="minValue">25%</span>
-                        </div>
-                        <div>
-                            <span style="color: #666; font-size: 0.875rem;">Maximum:</span>
-                            <span class="range-value" id="maxValue">75%</span>
-                        </div>
-                    </div>
-
-                    <button class="btn btn-primary" style="width: 100%; padding: 0.75rem;">
-                        Kiprobálom élesben!
-                    </button>
-                </div>
+        <div class="roadmap">
+            <div class="roadmap-item">
+                <h4 class="not-active">Inputanyagigény</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/elso.png'); "></div>
+            </div>
+            <div class="roadmap-item">
+                <h4 class="not-active">Ajánlatkérés</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/masodik.png'); "></div>
+            </div>
+            <div class="roadmap-item">
+                <h4 class="not-active">Tendereztetés</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/harmadik.png'); "></div>
+            </div>
+            <div class="roadmap-item">
+                <h4 class="not-active">Megrendelés</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/negyedik_.png'); "></div>
+            </div>
+            <div class="roadmap-item">
+                <h4 class="not-active">Szállítás</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/otodik_.png'); "></div>
             </div>
         </div>
     </section>
+</section>
+ 
 
-   <!-- === Apple-style horizontal tiles === -->
-   <section class="tile-scroller">
-    <button class="tile-nav left" aria-label="Balra" onclick="scrollTiles(-1)">
-      <svg viewBox="0 0 24 24" width="22" height="22"><polyline fill="none" stroke="currentColor" stroke-width="2" points="15,18 9,12 15,6"/></svg>
-    </button>
-  
-    <div class="tiles" id="tiles">
-      <!-- 1 – Ajánlatkérés -->
-      <article class="tile" style="--bg:url('https://webautomatika.hu/wp-content/uploads/2023/03/domaintarhelysslregisztracio.jpg'); margin-left: 15px;">
-        <div class="tile-inner">
-          <p class="eyebrow">Input+ • Ajánlatkérés</p>
-          <h3>Kérj ajánlatot több kereskedőtől egy kattintással.</h3>
-          <button class="more" aria-label="Továbbiak">+</button>
-        </div>
-      </article>
-  
-      <!-- 2 – Árfigyelő -->
-      <article class="tile" style="--bg:url('https://cdn.kormany.hu/uploads/media/2/27/271/2716a014302444a1daa7a90dfb9baf602f47b394_fhd_1920_w40h23.jpg')">
-        <div class="tile-inner">
-          <p class="eyebrow">Piaci árfigyelő</p>
-          <h3>Valós idejű árak és trendek – értesítés a jó vételről.</h3>
-          <button class="more" aria-label="Továbbiak">+</button>
-        </div>
-      </article>
-  
-      <!-- 3 – Rendelés -->
-      <article class="tile" style="--bg:url('https://minner.hu/wp-content/uploads/2019/12/kinai-nem-ad-szamlat-1068x712.jpg')">
-        <div class="tile-inner">
-          <p class="eyebrow">Rendelés</p>
-          <h3>Átlátható feltételek, pár kattintásos megrendelés.</h3>
-          <button class="more" aria-label="Továbbiak">+</button>
-        </div>
-      </article>
-  
-      <!-- 4 – Integráció -->
-      <article class="tile" style="--bg:url('https://images.unsplash.com/photo-1517059224940-d4af9eec41e5?q=80&w=1200&auto=format&fit=crop')">
-        <div class="tile-inner">
-          <p class="eyebrow">AgroVIR integráció</p>
-          <h3>Input+ adatok automatikusan a farmmenedzsmentbe.</h3>
-          <button class="more" aria-label="Továbbiak">+</button>
-        </div>
-      </article>
-  
-      <!-- 5 – Adatbiztonság -->
-      <article class="tile" style="--bg:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1200&auto=format&fit=crop')">
-        <div class="tile-inner">
-          <p class="eyebrow">Biztonság</p>
-          <h3>Titkosított kommunikáció, megbízható partnerek.</h3>
-          <button class="more" aria-label="Továbbiak">+</button>
-        </div>
-      </article>
-  
-      <!-- 6 – Raktár & készlet -->
-      <article class="tile" style="--bg:url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200&auto=format&fit=crop')">
-        <div class="tile-inner">
-          <p class="eyebrow">Kosárból a raktárba</p>
-          <h3>Beérkezés és készletkövetés egy platformon.</h3>
-          <button class="more" aria-label="Továbbiak">+</button>
-        </div>
-      </article>
-  
-      <!-- 7 – Ügyféltámogatás -->
-      <article class="tile" style="--bg:url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=1200&auto=format&fit=crop')">
-        <div class="tile-inner">
-          <p class="eyebrow">Ügyfélszolgálat</p>
-          <h3>Segítünk beállítani és használni az Input+ megoldást.</h3>
-          <button class="more" aria-label="Továbbiak">+</button>
-        </div>
-      </article>
-    </div>
-  
-    <button class="tile-nav right" aria-label="Jobbra" onclick="scrollTiles(1)">
-      <svg viewBox="0 0 24 24" width="22" height="22"><polyline fill="none" stroke="currentColor" stroke-width="2" points="9,6 15,12 9,18"/></svg>
-    </button>
-  </section>
-  
-  
-  <style>
-  /* Wrapper + edge fade */
-  .tile-scroller{
-    position:relative;
-    padding:24px 0px;
-  }
-  .tile-scroller::before,
-  .tile-scroller::after{
-    content:"";
-    position:absolute; top:0; bottom:0; width:80px; z-index:3; pointer-events:none;
-  }
-  
-  
-  /* Track */
-  .tiles{
-    display:flex; gap:24px;
-    overflow-x:auto; overscroll-behavior-x:contain;
-    scroll-snap-type:x mandatory;
-    padding:0 24px;
-    -webkit-overflow-scrolling:touch;
-    scrollbar-width:none;
+    <script>
 
-  }
-  .tiles::-webkit-scrollbar{ display:none; }
-  
-  /* Card */
-  .tile{
-    flex:0 0 auto;
-    min-width:340px; max-width:380px; width:clamp(300px,28vw,380px);
-    height:560px;
-    background: var(--bg) center/cover no-repeat;
-    border-radius:28px;
-    position:relative;
-    scroll-snap-align:start;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-    overflow:hidden;
-    transform: scale(.985); 
-    opacity:.001;
-    transition: transform .6s cubic-bezier(.2,.7,.2,1), box-shadow .6s, opacity .6s;
-    will-change: transform;
-  }
+        
+        // 1) Állomások szövegei (sorrendben)
+        const stepTexts = [
+          "Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.",
+          "Ajánlatkérés – több partnertől kapsz beárazást egy kattintással.",
+          "Tendereztetés – automatikus összehasonlítás, átlátható feltételek.",
+          "Megrendelés – kiválasztod a legjobb ajánlatot és leadod a rendelést.",
+          "Szállítás – ütemezett, követhető kiszállítás a telephelyedre."
+        ];
+        const stepIconsGreen = [
+          './assets/elso.png',
+          './assets/masodik.png',
+          './assets/harmadik.png',
+          './assets/negyedik.png',
+          './assets/otodik.png'
+        ];
+        const stepIconsGray = [
+          './assets/elso_.png',
+          './assets/masodik_.png',
+          './assets/harmadik_.png',
+          './assets/negyedik_.png',
+          './assets/otodik_.png'
+        ];
+        const wrapper = document.querySelector('.folyamat-wrapper');
+        const folyamat = document.getElementById('folyamat');
+        const textEl   = folyamat.querySelector('.folyamat-text');
+        const barEl    = folyamat.querySelector('.stepper-bar');
+        const steps    = Array.from(folyamat.querySelectorAll('.roadmap-item'));
 
-  .tiles .tile:first-child {
-  margin-left: 40px;
+
+
+      
+      
+        // 2) Küszöbök (százalékban). Itt 5 elem → 0%, 25%, 50%, 75%, 100%
+        const thresholds = [0, 25, 50, 75, 100];
+      
+        // Helper: adott százalékhoz melyik index az aktuális?
+        function getActiveIndex(pct){
+          // megkeressük az utolsó küszöböt, ami <= pct
+          let idx = 0;
+          for (let i=0; i<thresholds.length; i++){
+            if (pct >= thresholds[i]) idx = i;
+          }
+          return idx;
+        }
+      
+        // 3) Állapot frissítése (sáv + lépések + szöveg)
+        function setProgress(pct){
+          pct = Math.max(0, Math.min(100, pct));
+          barEl.style.width = pct + '%';
+      
+          const activeIdx = getActiveIndex(pct);
+      
+          steps.forEach((el, i) => {
+            const h = el.querySelector('h4');
+            const icon = el.querySelector('.roadmap-icon');
+            if(i<=activeIdx) {
+              h.classList.remove("not-active");
+              h.classList.add("is-active");
+            } 
+            else {
+              h.classList.remove("is-active");
+              h.classList.add("not-active");
+            }
+            if(i <= activeIdx) {
+              icon.style.backgroundImage = `url(${stepIconsGreen[i]})`;
+            } else {
+              icon.style.backgroundImage = `url(${stepIconsGray[i]})`;
+            }
+            
+            
+          });
+      
+          // Szöveg csere az aktív index szerint
+          textEl.textContent = stepTexts[activeIdx] || stepTexts[stepTexts.length-1];
+        }
+      
+        // 4/A) Kattintásra is lehessen ugrani adott lépésre
+        steps.forEach((el, i) => {
+          el.style.cursor = 'pointer';
+          el.addEventListener('click', () => setProgress(thresholds[i]));
+        });
+      
+        // 4/B) (opcionális) görgetéshez kötött frissítés a szekcióban
+        // A szekció saját magasságához normalizálunk
+       // Scrollból progress számítás (STABIL képlet sticky-hez)
+function updateFromScroll(){
+  const rect = wrapper.getBoundingClientRect();
+  const vh   = window.innerHeight;
+
+  const totalScroll = wrapper.offsetHeight - vh;            // pl. 500vh - 100vh
+  const passed      = Math.min(Math.max(-rect.top, 0), totalScroll);
+  const progress    = totalScroll ? (passed / totalScroll) : 0; // 0..1
+
+  setProgress(progress * 100);
 }
-  .tile::before{
-    content:"";
-    position:absolute; inset:0;
-    background:linear-gradient(180deg, rgba(0,0,0,.32), rgba(0,0,0,0) 35%, rgba(0,0,0,.35));
-    pointer-events:none;
+
+// Performáns scroll kezelő
+let ticking = false;
+function onScroll(){
+  if (!ticking){
+    requestAnimationFrame(() => { updateFromScroll(); ticking = false; });
+    ticking = true;
   }
-  .tile:hover{
-    transform: translateY(0) scale(1.01);
-    box-shadow:0 18px 40px rgba(0,0,0,.16);
-  }
-  
-  /* Content */
-  .tile-inner{
-    position:absolute; inset:0; padding:26px; color:#fff; display:flex; flex-direction:column;
-  }
-  .eyebrow{
-    font-size:.9rem; letter-spacing:.02em; opacity:.85; margin-bottom:.25rem;
-  }
-  .tile h3{
-    font-size:2rem; line-height:1.1; max-width:16ch;
-    text-shadow:0 2px 10px rgba(0,0,0,.35);
-  }
-  .more{
-    margin-top:auto; align-self:flex-end;
-    width:42px; height:42px; border-radius:50%;
-    display:grid; place-items:center; font-weight:700; font-size:1.2rem;
-    background:rgba(0,0,0,.55); color:#fff; border:none; cursor:pointer;
-    transition:background .25s, transform .25s;
-  }
-  .more:hover{ background:#27ae60; transform:scale(1.05); }
-  
-  /* In-view animation class */
-  .tile.in-view{
-    opacity:1;
-    transform: scale(1);   
-  }
-  
-  /* Nav buttons */
-  .tile-nav{
-    position:absolute; top:50%; transform:translateY(-50%);
-    z-index:4; width:42px; height:42px; border-radius:50%;
-    border:none; background:#111; color:#fff; opacity:.85; cursor:pointer;
-    display:grid; place-items:center; transition:opacity .2s, transform .2s;
-  }
-  .tile-nav:hover{ opacity:1; transform:translateY(-50%) scale(1.05); }
-  .tile-nav.left{ left:8px; }
-  .tile-nav.right{ right:8px; }
-  
-  @media (max-width: 640px){
-    .tile{ height:520px; }
-    .tile h3{ font-size:1.7rem; }
-  }
-  </style>
+}
+
+window.addEventListener('scroll', onScroll, { passive:true });
+window.addEventListener('resize', updateFromScroll, { passive:true });
+
+// Kezdő állapot
+setProgress(0);
+updateFromScroll();
+      </script>
   
   <script>
     /* Scroll by one card on arrow click */
@@ -1314,38 +1239,11 @@
       document.querySelectorAll('.tile').forEach(t => io.observe(t));
     })();
     </script>
+
+
     
 
-    <!-- Features -->
-    <section class="features" style="padding-top: 5rem; padding-bottom: 5rem; margin-top: 0rem;">
-        <div class="feature-item" data-aos="fade-left">
-          <img src="https://help.agrovir.com/wp-content/uploads/2025/07/aras.png" alt="Átlátható árak">
-          <div class="feature-text">
-            <h2>Átlátható árak</h2>
-            <p>Megmutatjuk a piaci árak alakulását, hogy a lehető legtöbb információ birtokában történjen a beszerzés.</p>
-          </div>
-        </div>
-        <div class="feature-item" data-aos="fade-right">
-          <img src="https://help.agrovir.com/wp-content/uploads/2025/07/f30771a4384f08601a65de520ec5f33c4b8268fc.png" alt="Kosárból a raktárba">
-          <div class="feature-text">
-            <h2>Kosárból a raktárba</h2>
-            <p>A teljes beszerzési folyamat egy platformon kezelhető. Az ajánlatkéréstől a raktárba érkezésig.</p>
-          </div>
-        </div>
-        <div class="feature-item" data-aos="fade-left">
-          <img src="https://help.agrovir.com/wp-content/uploads/2025/07/7fec7abf6bc711483f7d9e751fcc64dad54fe7c0.png" alt="Országos lefedettség">
-          <div class="feature-text">
-            <h2>Országos lefedettség</h2>
-            <p>12 kereskedő partnerrel lefedjük a teljes országot, így mindenhonnan a legjobb szolgáltatást kapod.</p>
-          </div>
-        </div>
-      </section>
-
-    <section>
-        <div class="pipedriveWebForms" data-pd-webforms="https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp"><script src="https://webforms.pipedrive.com/f/loader"></script></div>
-    </section>
-      
-
+    
     <!-- FAQ -->
     <section class="section section-gray" id="faq">
         <div class="container">
