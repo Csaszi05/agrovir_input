@@ -21,6 +21,7 @@
             line-height: 1.6;
             color: #333;
             scroll-behavior: smooth;
+            overflow-x: hidden;
         }
 
         .container {
@@ -916,6 +917,10 @@
     </style>
     <!-- Csempék -->
     <style>
+        .mobil-folyamat {
+            display: none;
+        }
+
         .folyamat {
             width: 100%;
             display: flex;
@@ -1049,6 +1054,121 @@
         .flash-slide {
         animation: fade-slide-up 0.6s ease-out;
         }
+
+        @media (max-width: 768px) {
+            .folyamat-wrapper {
+               display: none;
+            }
+            .folyamat {
+                display: none;
+            }
+
+            .mobil-folyamat {
+                display: block;
+            }
+
+           
+
+            .mobil-folyamat{
+            /* legyen elég magas tartalom, hogy legyen mit görgetni */
+            padding: 24px 16px 80vh;  /* az utolsó érték ad extra görgetési utat, igény szerint */
+            background:#fff;
+            }
+            .folyamat-container-mobil{
+            display:grid;
+            grid-template-columns: 12px 1fr;
+            gap:14px;
+            align-items:start;
+            }
+
+            /* bal oldali sáv “tapad” a viewporthoz görgetés közben */
+            .stepper-container-mobil{
+            
+            top: 96px;             /* mennyire legyen lejjebb rögzítve */
+            height: calc(100vh - 140px);
+            }
+            .stepper-mobil{
+            width: 100%;
+            height: 165rem;
+            background:#e7eef3;
+            border-radius: 999px;
+            overflow:hidden;
+            }
+            .stepper-bar-mobil{
+            width: 100%;
+            height: 0%;
+            background:#22C373;
+            transition: height .25s ease; /* simítás */
+            }
+
+            .roadmap-mobil{
+            display:flex;
+            flex-direction:column;
+            gap:20px;
+            }
+            .roadmap-item-mobil{
+            padding:14px 12px;
+            border-radius:12px;
+            background:#ffffff;
+            color:#4a5a68;
+            transition: transform .25s ease, background .25s ease, color .25s ease;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            }
+            .roadmap-item-mobil.is-active,
+            .roadmap-item-mobil.is-done{
+            background:#e9f8f1;
+            color:#0f7e53;
+            transform: translateX(4px);
+            }
+
+            .roadmap-item-mobil .roadmap-icon{
+            width: 8rem;
+            height: 8rem;
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            margin-bottom: 0.5rem;
+            
+        }
+
+        .activeh4{
+            color: #22C373 !important;
+            font-weight: 600 !important;
+        }
+
+        .activep{
+            color: #4a5a68 !important;
+            font-weight: 400 !important;
+            text-align: center;
+        }
+
+        .notactiveh4 {
+            color: #ffffff !important;
+            font-weight: 600 !important;
+        }
+
+        .notactivep{
+            color: #ffffff !important;
+            font-weight: 400 !important;
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+        }
+
+        .fade-in {
+        animation: fadeIn 0.6s ease forwards;
+        }
+
+                        
+            
+        }
+
        
 
     </style>
@@ -1107,6 +1227,166 @@
         </div>
     </section>
 
+
+    <!--Mobil Folyamat-->
+    <section class="mobil-folyamat" id="mobilFolyamat">
+        <div class="section-title">Egyszerű rendelési folyamat</div>
+      
+        <div class="folyamat-container-mobil">
+          <div class="stepper-container-mobil">
+            <div class="stepper-mobil">
+              <div class="stepper-bar-mobil"></div>
+            </div>
+          </div>
+      
+          <div class="roadmap-mobil" id="roadmapMobil">
+            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                <h4 class="not-active">Inputanyagigény</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/elso.png'); "></div>
+                <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.</p>
+            </div>
+            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                <h4 class="not-active">Ajánlatkérés</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/masodik.png'); "></div>
+                <p class="not-active text-mobil">Ajánlatkérés – több partnertől kapsz beárazást egy kattintással.</p>
+            </div>
+            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                <h4 class="not-active">Tendereztetés</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/harmadik.png'); "></div>
+                <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.</p>
+            </div>
+            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                <h4 class="not-active">Megrendelés</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/negyedik.png'); "></div>
+                <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.</p>
+            </div>
+            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                <h4 class="not-active">Szállítás</h4>
+                <div class="roadmap-icon" style="background-image: url('./assets/otodik.png'); "></div>
+                <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        (() => {
+            const stepTexts = [
+          "Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.",
+          "Ajánlatkérés – több partnertől kapsz beárazást egy kattintással.",
+          "Tendereztetés – automatikus összehasonlítás, átlátható feltételek.",
+          "Megrendelés – kiválasztod a legjobb ajánlatot és leadod a rendelést.",
+          "Szállítás – ütemezett, követhető kiszállítás a telephelyedre."
+        ];
+        const stepIconsGreen = [
+          './assets/elso.png',
+          './assets/masodik.png',
+          './assets/harmadik.png',
+          './assets/negyedik.png',
+          './assets/otodik.png'
+        ];
+
+        const canAnimate = [true, true, true, true, true]
+
+          const section   = document.getElementById('mobilFolyamat');
+          const bar       = section.querySelector('.stepper-bar-mobil');
+          const items     = Array.from(section.querySelectorAll('.roadmap-item-mobil'));
+        
+          // 5 lépés → 0%, 25%, 50%, 75%, 100% (0..1 tartományban)
+          const thresholds = [0.15, 0.25, 0.35, 0.5, 0.7];
+        
+          const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+        
+          function getProgress() {
+            const rect = section.getBoundingClientRect();
+            const vh   = window.innerHeight;
+        
+            // mennyi a bejárható út a szekción belül (wrapper nélkül)
+            const total = section.offsetHeight - vh;
+            const passed = clamp(-rect.top, 0, total); // 0..total
+            return total > 0 ? (passed / total) : 0;   // 0..1
+          }
+        
+          function activeIndex(progress){
+            // utolsó küszöb index, ami <= progress
+            let idx = 0;
+            for (let i = 0; i < thresholds.length; i++) {
+              if (progress >= thresholds[i]) idx = i;
+            }
+            // items index 0..items.length-1
+            return Math.min(idx, items.length - 1);
+          }
+        
+          function render(){
+            const p = getProgress();             // 0..1
+            bar.style.height = (p * 150) + '%';  // nő a zöld sáv
+        
+            const idx = activeIndex(p);
+        
+            items.forEach((el, i) => {
+              const h = el.querySelector('h4');
+              const icon = el.querySelector('.roadmap-icon');
+              const text = el.querySelector('.text-mobil')
+              if(i == idx && canAnimate[i]) {
+                icon.classList.add("flash-pop"); // vagy flash-slide, flash-pulse
+                
+                h.classList.add("flash-pop");
+                h.addEventListener("animationend", () => {
+              h.classList.remove("flash-pop"); // hogy ne ragadjon rajta
+                }, { once: true });
+
+              icon.addEventListener("animationend", () => {
+              icon.classList.remove("flash-pop"); // hogy ne ragadjon rajta
+                }, { once: true });
+
+                setTimeout(() => {
+                text.classList.add('fade-in');
+                text.classList.add('activep')
+                // ha újra kell játszani máskor is, töröld a végén
+                text.addEventListener("animationend", () => {
+                text.classList.remove('fade-in');
+                }, { once: true });
+            }, 500);
+                canAnimate[i] = false; // csak egyszer animáljuk
+            }
+            
+            else if (i <= idx){
+                text.classList.remove('notactivep');
+                h.classList.remove('notactiveh4');
+                h.classList.add('activeh4');
+                icon.style.backgroundImage = `url(${stepIconsGreen[i]})`;
+               
+            }
+             else {
+                text.classList.remove('activep');
+                h.classList.remove('activeh4');
+                icon.style.backgroundImage = `url('')`;
+                h.classList.add('notactiveh4');
+                setTimeout(() => {
+                text.classList.add('notactivep');
+                }, 500); // 200ms késés, állíthatod nagyobbra is
+             }
+            });
+          }
+        
+          // sima és performáns görgetéskezelés
+          let ticking = false;
+          function onScroll(){
+            if(!ticking){
+              requestAnimationFrame(() => { render(); ticking = false; });
+              ticking = true;
+            }
+          }
+        
+          window.addEventListener('scroll', onScroll, { passive:true });
+          window.addEventListener('resize', render, { passive:true });
+        
+          // init
+          render();
+        })();
+        </script>
+
+
     <!-- Folyamat  -->
     <section class="folyamat-wrapper">
     <section class="folyamat" id="folyamat">
@@ -1147,7 +1427,8 @@
         </div>
     </section>
 </section>
- 
+    
+
 
     <script>
 
@@ -1445,6 +1726,151 @@ updateFromScroll();
         margin-top: 20px;
     }
 
+   /* ===== MOBIL (<=768px) — csak override, desktophoz nem nyúl ===== */
+@media (max-width: 768px){
+
+/* mutassuk a csempéket mobilon is */
+.csempek{
+  display:block;
+  padding-bottom: 3rem;
+}
+
+/* egy oszlopos lista, szép belső margóval */
+.csempek-container{
+  display:grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  max-width: 640px;   /* hogy ne érjen ki teljesen a széléig */
+  padding: 0 16px;
+  margin: 0 auto;
+}
+
+/* nagy, fehér kártya — csak szöveg (kép panelt mobilon elrejtjük) */
+.csempe-nagy{
+  min-height: 220px;
+  height: auto;
+  border-radius: 16px;
+  border: 1.5px solid #EBEAED;
+  box-shadow: 0 4px 10px rgba(0,0,0,.05);
+  display:block;          /* ne legyen kétoszlopos */
+  background:#fff;
+}
+.csempe-nagy .img-container{ display:none; } /* mobilon nem kell a jobb oldali kép */
+
+.csempe-nagy .text-container{
+  margin: 0;
+  padding: 20px 20px 24px;
+}
+
+/* tipók mobilon (mint a screenshoton) */
+.text-container .uppertext{
+  letter-spacing: .18em;
+  font-size: 12px;
+  line-height: 1.2;
+  color: #5b5b5b;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.csempe-nagy .text-container h3{
+  font-size: 34px;
+  line-height: 1.05;
+  font-weight: 800;
+  color: #0B0D0F;
+  margin-bottom: 12px;
+}
+.csempe-nagy .text-container p{
+  font-size: 16px;
+  line-height: 1.6;
+  color: #373737;
+}
+
+/* zöld, képes kártyák (három alsó + a “Webshop” és “Akciók”) */
+.csempe-kicsi{
+  min-height: 220px;
+  height: auto;
+  border-radius: 16px;
+  border: none;               /* ne legyen szürke keret a zöldön */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.12);
+}
+.csempe-kicsi .text-container{
+  border-radius: 16px;        /* hogy a háttérkép is kerek legyen */
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 220px;
+  color: #fff;
+}
+.csempe-kicsi .text-container .uppertext{
+  color:#e8fff3;
+  letter-spacing: .18em;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+.csempe-kicsi .text-container h3{
+  color: #fff;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 1.06;
+  margin-bottom: 18px;
+}
+.csempe-kicsi .description{
+  color:#f1fff7;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+/* “MEGNÉZEM” gomb elhelyezés (mint a képen – a kép alján kicsit feljebb) */
+.megnezem-button{
+  align-self: flex-start;
+  margin-top: auto;  /* le a kártya aljára */
+  transform: translateY(12px);
+  height: 40px; width: 150px;
+  border-radius: 24px;
+  font-size: 14px;
+  color: #1a1a1a;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+}
+
+
+}
+
+@media (max-width: 768px) {
+  .csempek-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* kártyák közti távolság */
+  }
+
+  .csempe-nagy,
+  .csempe-kicsi {
+    width: 100%;
+    height: auto;        /* hogy tartalomhoz igazodjon */
+    min-height: 220px;   /* ha akarsz fix magasságot */
+  }
+
+  .csempe-nagy .img-container {
+    width: 100%; 
+    height: 180px;       /* kép magasság */
+    border-radius: 0 0 10px 10px;
+  }
+
+  .csempe-nagy .text-container {
+    margin: 0;
+    padding: 20px;
+  }
+
+  .csempe-kicsi .text-container {
+    padding: 20px;
+  }
+
+  .megnezem-button {
+    position: static; /* ne csússzon le mobilon */
+    margin-top: 15px;
+  }
+}
+
 
 </style>
     <!-- Csempék --> 
@@ -1616,6 +2042,66 @@ updateFromScroll();
         transition:opacity .4s, transform .4s;
         }
 
+        @media (max-width: 768px){
+        .map{
+            padding: 24px 0 40px;
+        }
+        .map .container{
+            flex-direction: column;       /* térkép felül, szöveg alul */
+            gap: 20px;
+            align-items: stretch;
+            padding: 0 16px;
+        }
+        .map .map-image{
+            order: 1;
+            width: 100%;
+            height: 350px;                /* mobil magasság */
+            margin: 0;
+            border-radius: 12px;
+            background-position: center;
+            background-size: cover;
+            position: relative;           /* a pöttyök abszolút ehhez képest */
+            overflow: hidden;
+        }
+        .map .map-text{
+            order: 2;
+            max-width: 100%;
+            margin: 0;
+            text-align: left;
+        }
+        .map .section-title{
+            font-size: 2rem;              /* ~32px */
+            line-height: 1.2;
+            margin: 16px 0 8px;
+        }
+        .map .section-subtitle{
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        .map button{
+            width: 60%;
+            height: 48px;
+            font-size: 1rem;
+            border-radius: 28px;
+            margin-top: 20px;
+        }
+
+        /* pöttyök mobilon */
+        .map .pointer{
+            position: absolute;           /* fontos! */
+            width: 14px;
+            height: 14px;
+            opacity: 0;                   /* AOS előtt rejtett */
+            transform: scale(.85);
+        }
+        .map .pointer.aos-animate{
+            opacity: 1;
+            transform: none;
+            transition: opacity .35s, transform .35s;
+        }
+        }
+
     </style>
 
     <!-- Map -->
@@ -1626,24 +2112,58 @@ updateFromScroll();
                 <p data-aos="fade-left" class="section-subtitle">Placeholder szöveg -Kapcsolatot építünk ki a mindennapi készletkezeléseddel, így a megrendelésed papírmentesen az ügyviteli folyamatod része lehet. *Csak AgroVIR Global ügyfeleknek elérhető</p>
                 <button data-aos="fade-left">CSATLAKOZOM KERESKEDŐKÉNT</button>
             </div>
-            <div class="map-image" data-aos="fade-left" data-aos-once="true" style="background-image:url('./assets/map.png')">
+            <div class="map-image" data-aos="fade-left" data-aos-once="true"
+                    style="background-image:url('./assets/map.png')">
                 <!-- Győr -->
-                <img class="pointer" src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="1000"  data-aos-anchor=".map-image"
-                    style="top:90px; left:-100px">
+                <img class="pointer"
+                    src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="900" data-aos-anchor=".map-image"
+                    style="top: 32%; left: 18%;">
                 <!-- Marcali -->
-                <img class="pointer" src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="1600"  data-aos-anchor=".map-image"
-                    style="top:200px; left:-120px">
+                <img class="pointer"
+                    src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="1200" data-aos-anchor=".map-image"
+                    style="top: 70%; left: 14%;">
                 <!-- Debrecen -->
-                <img class="pointer" src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="1900"  data-aos-anchor=".map-image"
-                    style="top:200px; left:80px">
+                <img class="pointer"
+                    src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="1500" data-aos-anchor=".map-image"
+                    style="top: 66%; left: 22%;">
                 <!-- Békéscsaba -->
-                <img class="pointer" src="./assets/ellipse.png"
+                <img class="pointer"
+                    src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="1800" data-aos-anchor=".map-image"
+                    style="top: 38%; left: 31%;">
+                    <!-- Paks -->
+                    <img class="pointer"
+                    src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="2000" data-aos-anchor=".map-image"
+                    style="top: 55%; left: -20%;">
+
+                    <!-- Szeged -->
+                    <img class="pointer"
+                    src="./assets/ellipse.png"
                     data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image"
-                    style="top:100px; left:90px">
-                </div>
+                    style="top: 75%; left: -12%;">
+
+                    <!-- Veszprém -->
+                    <img class="pointer"
+                    src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="2400" data-aos-anchor=".map-image"
+                    style="top: 48%; left: -38%;">
+
+                    <!-- Miskolc -->
+                    <img class="pointer"
+                    src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="2600" data-aos-anchor=".map-image"
+                    style="top: 30%; left: -22%;">
+
+                    <!-- Zalaegerszeg -->
+                    <img class="pointer"
+                    src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="2800" data-aos-anchor=".map-image"
+                    style="top: 62%; left: -2%;">
+            </div>
         </div>
     
     </section>
