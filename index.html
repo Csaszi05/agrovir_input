@@ -27,6 +27,14 @@
             overflow-x: hidden !important; 
         }
 
+        html, body {
+        max-width: 100%;
+        overflow-x: clip;   /* modern */
+        }
+        @supports not (overflow-x: clip) {
+        html, body { overflow-x: hidden; }  /* fallback régebbire */
+        }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
