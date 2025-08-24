@@ -161,6 +161,13 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
+        .carousel-slide .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+       
 
         .carousel-slide.active {
             opacity: 1;
@@ -170,6 +177,11 @@
             max-width: 600px;
             color: white;
             z-index: 2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding-top: 2rem;
         }
 
         .carousel-content h1 {
@@ -177,12 +189,28 @@
             font-weight: bold;
             margin-bottom: 1.5rem;
             line-height: 1.2;
+            text-align: center;
+            font-weight: 700;
         }
 
         .carousel-content p {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            text-align: center;
+        }
+
+        .carousel-content button {
+            margin-top: 20px;
+            padding: 0.75rem 2rem;
+            font-size: 1.1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 2rem;
+            background: #22C373;
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.2s;
         }
 
         .carousel-buttons {
@@ -190,6 +218,8 @@
             gap: 1rem;
             flex-wrap: wrap;
             font-size: 1.3rem;
+            background-color: #22C373;
+            border-radius: 50%;
         }
 
         .carousel-nav {
@@ -668,7 +698,7 @@
             }
 
             .carousel-content h1 {
-                font-size: 4rem;
+                font-size: 3rem;
             }
 
             .carousel-buttons {
@@ -1025,10 +1055,7 @@
                 <div class="carousel-content">
                     <h1>Inputanyagbeszerzés egy gombnyomásra</h1>
                     <p>Egyszerűsítse le a termékbeszerzési folyamatokat modern digitális megoldásokkal</p>
-                    <div class="carousel-buttons">
-                        <a href="#" class="btn btn-primary">Belépés</a>
-                       
-                    </div>
+                    <button>KIPROBÁLOM</button>
                 </div>
             </div>
         </div>
@@ -1038,10 +1065,7 @@
                 <div class="carousel-content">
                     <h1>Átlátható árak, gyors szállítás</h1>
                     <p>Hasonlítsa össze az árakat és válassza a legjobb ajánlatot</p>
-                    <div class="carousel-buttons">
-                        <a href="#" class="btn btn-primary">Belépés</a>
-                    
-                    </div>
+                    <button>KIPROBÁLOM</button>
                 </div>
             </div>
         </div>
@@ -1051,9 +1075,7 @@
                 <div class="carousel-content">
                     <h1>Országos lefedettség</h1>
                     <p>Megbízható szállítás az egész országban</p>
-                    <div class="carousel-buttons">
-                        <a href="#" class="btn btn-primary">Belépés</a>
-                    </div>
+                    <button>KIPROBÁLOM</button>
                 </div>
             </div>
         </div>
@@ -1421,7 +1443,7 @@ updateFromScroll();
 
     <section class="csempek" id="csempek">
         <div class="csempek-container">
-                <div style="grid-column: span 2;" class="csempe-nagy" >
+                <div style="grid-column: span 2;" class="csempe-nagy"  data-aos="fade-right">
                     <div class="text-container">
                         <p class="uppertext">Átláthatóság</p>
                         <h3>Árfigyelő</h3>
@@ -1433,7 +1455,7 @@ updateFromScroll();
                         
                     </div>
                 </div>
-                <div style="grid-column: span 1;"  class="csempe-kicsi" >
+                <div style="grid-column: span 1;"  class="csempe-kicsi" data-aos="fade-left" data-aos-delay="1000">
                     <div class="text-container"  style="background-image: url('./assets/webshop.jpg'); background-position: center; background-size: cover; ">
                         <p class="uppertext">Átláthatóság</p>
                         <h3>Árfigyelő</h3>
@@ -1443,7 +1465,7 @@ updateFromScroll();
                     </div>
                 </div>
 
-                <div style="grid-column: span 1;" class="csempe-kicsi">
+                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-right" data-aos-delay="1000">
                      <div class="text-container"  style="background-image: url('./assets/Background.jpg'); background-position: center; background-size: cover; ">
                         <p class="uppertext">Mennyi az annyi</p>
                         <h3>Kereskedői <br> Akciók</h3>
@@ -1452,7 +1474,7 @@ updateFromScroll();
                         </div>
                     </div>
                 </div>
-                <div style="grid-column: span 2; " class="csempe-nagy">
+                <div style="grid-column: span 2; " class="csempe-nagy" data-aos="fade-left" data-aos-delay="1500">
                     <div class="text-container">
                         <p class="uppertext">Átláthatóság</p>
                         <h3>Készletkezelés</h3>
@@ -1466,7 +1488,7 @@ updateFromScroll();
                         </div>
                 </div>
 
-                <div style="grid-column: span 1;" class="csempe-kicsi">
+                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1000">
                     <div class="text-container"  style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/idojaras.jpg') center/cover no-repeat; background-position: right;">
@@ -1476,7 +1498,7 @@ updateFromScroll();
                     </div>
                 </div>
                     
-                <div style="grid-column: span 1;" class="csempe-kicsi">
+                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1300">
                     <div class="text-container"  style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/inputanyag_tervezo.jpg') center/cover no-repeat; background-position: right;">
@@ -1485,7 +1507,7 @@ updateFromScroll();
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
                 </div>
-                <div style="grid-column: span 1;" class="csempe-kicsi">
+                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1700">
                     <div class="text-container"  style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/kozossegi.jpg') center/cover no-repeat; background-position: right;">
@@ -1518,11 +1540,12 @@ updateFromScroll();
         }
         .map .map-text {
             flex: 1;
-            padding-right: 2rem;
+            max-width: 70%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             text-align: left;
+            margin-right: 30px;
         }
 
         .map .section-title {
@@ -1551,6 +1574,7 @@ updateFromScroll();
             height: 300px;
             background-size: cover;
             background-position: center;
+            margin-left: 40px;
         }
 
 
@@ -1569,6 +1593,21 @@ updateFromScroll();
             box-shadow: 0px 3px 5px 0px #22C3734D;
 
         }
+
+        .map .pointer {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            opacity:0;                 /* kezdetben rejtve */
+            transform:scale(.85);  
+        }
+
+        .pointer.aos-animate{
+        opacity:1;                 /* animáció után látszik */
+        transform:none;
+        transition:opacity .4s, transform .4s;
+        }
+
     </style>
 
     <!-- Map -->
@@ -1579,7 +1618,24 @@ updateFromScroll();
                 <p data-aos="fade-left" class="section-subtitle">Placeholder szöveg -Kapcsolatot építünk ki a mindennapi készletkezeléseddel, így a megrendelésed papírmentesen az ügyviteli folyamatod része lehet. *Csak AgroVIR Global ügyfeleknek elérhető</p>
                 <button data-aos="fade-left">CSATLAKOZOM KERESKEDŐKÉNT</button>
             </div>
-            <div data-aos="zoom-in" class="map-image" style="background-image: url('./assets/map.png');"></div>
+            <div class="map-image" data-aos="fade-left" data-aos-once="true" style="background-image:url('./assets/map.png')">
+                <!-- Győr -->
+                <img class="pointer" src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="1000"  data-aos-anchor=".map-image"
+                    style="top:90px; left:-100px">
+                <!-- Marcali -->
+                <img class="pointer" src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="1600"  data-aos-anchor=".map-image"
+                    style="top:200px; left:-120px">
+                <!-- Debrecen -->
+                <img class="pointer" src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="1900"  data-aos-anchor=".map-image"
+                    style="top:200px; left:80px">
+                <!-- Békéscsaba -->
+                <img class="pointer" src="./assets/ellipse.png"
+                    data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image"
+                    style="top:100px; left:90px">
+                </div>
         </div>
     
     </section>
