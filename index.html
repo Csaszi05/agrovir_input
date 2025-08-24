@@ -33,6 +33,27 @@
             padding: 0 1rem;
         }
 
+                /* Mobilon is maradjon a saját színed */
+        .faq-question {
+        color: #0B0D0F;                /* fix szín */
+        -webkit-appearance: none;      /* iOS alap gomb-stílus reset */
+        appearance: none;
+        background: none;
+        border: none;
+        }
+
+        /* Biztos, ami biztos: a belső elemek is örököljenek */
+        .faq-question * {
+        color: inherit;
+        }
+
+        /* Aktív/fókusz állapotban se váltson kékre */
+        .faq-question:focus,
+        .faq-question:active {
+        color: #0B0D0F;
+        outline: none;
+        }
+
         /* Header Styles */
         .header {
             background: white;
