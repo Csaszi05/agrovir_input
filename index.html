@@ -27,9 +27,12 @@
             overflow-x: hidden !important; 
         }
 
-        html, body {
+       
+        @media only screen and (max-width: 728px) {
+            html, body {
         max-width: 100%;
-        overflow-x: clip;   /* modern */
+        overflow-x: clip;
+        }
         }
         @supports not (overflow-x: clip) {
         html, body { overflow-x: hidden; }  /* fallback régebbire */
@@ -960,16 +963,22 @@
             justify-content: center;
             background-color: #FFFFFF;
             padding-bottom: 5rem;
+            overflow: visible;
+            position: sticky;
         }
         .folyamat-wrapper {
             position: relative;
             height: 400vh; /* 5 képernyőnyi görgetési tartomány */
+            overflow: visible
             }
+
             .folyamat{
         position: sticky; top: 0; height: 100vh;
         background:#fff; z-index: 2; /* takarja a mögötte lévőt */
         display:flex; flex-direction:column; justify-content:center; gap:24px;
 }
+
+
     
 
 
@@ -1940,7 +1949,7 @@ updateFromScroll();
                         </div>
                     </div>
                 </div>
-                <div style="grid-column: span 2; " class="csempe-nagy" data-aos="fade-left" data-aos-delay="1500">
+                <div style="grid-column: span 2; " class="csempe-nagy" data-aos="fade-left" data-aos-delay="1100">
                     <div class="text-container">
                         <p class="uppertext">Átláthatóság</p>
                         <h3>Készletkezelés</h3>
@@ -1954,7 +1963,7 @@ updateFromScroll();
                         </div>
                 </div>
 
-                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1000">
+                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1100">
                     <div class="text-container"  style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/idojaras.jpg') center/cover no-repeat; background-position: right;">
@@ -1964,7 +1973,7 @@ updateFromScroll();
                     </div>
                 </div>
                     
-                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1300">
+                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1200">
                     <div class="text-container"  style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/inputanyag_tervezo.jpg') center/cover no-repeat; background-position: right;">
@@ -1973,7 +1982,7 @@ updateFromScroll();
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
                 </div>
-                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1700">
+                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1300">
                     <div class="text-container"  style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/kozossegi.jpg') center/cover no-repeat; background-position: right;">
