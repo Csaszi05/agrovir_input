@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet">
     <title>Input+ - Agrovir</title>
     <style>
         * {
@@ -15,6 +17,7 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         a {
             color: #000000;
         }
@@ -24,18 +27,27 @@
             line-height: 1.6;
             color: #333;
             scroll-behavior: smooth;
-            overflow-x: hidden !important; 
+            overflow-x: hidden !important;
         }
 
-       
+
         @media only screen and (max-width: 728px) {
-            html, body {
-        max-width: 100%;
-        overflow-x: clip;
+
+            html,
+            body {
+                max-width: 100%;
+                overflow-x: clip;
+            }
         }
-        }
+
         @supports not (overflow-x: clip) {
-        html, body { overflow-x: hidden; }  /* fallback régebbire */
+
+            html,
+            body {
+                overflow-x: hidden;
+            }
+
+            /* fallback régebbire */
         }
 
         .container {
@@ -44,31 +56,33 @@
             padding: 0 1rem;
         }
 
-                /* Mobilon is maradjon a saját színed */
+        /* Mobilon is maradjon a saját színed */
         .faq-question {
-        color: #0B0D0F;                /* fix szín */
-        -webkit-appearance: none;      /* iOS alap gomb-stílus reset */
-        appearance: none;
-        background: none;
-        border: none;
+            color: #0B0D0F;
+            /* fix szín */
+            -webkit-appearance: none;
+            /* iOS alap gomb-stílus reset */
+            appearance: none;
+            background: none;
+            border: none;
         }
 
         /* Biztos, ami biztos: a belső elemek is örököljenek */
         .faq-question * {
-        color: inherit;
+            color: inherit;
         }
 
         /* Aktív/fókusz állapotban se váltson kékre */
         .faq-question:focus,
         .faq-question:active {
-        color: #0B0D0F;
-        outline: none;
+            color: #0B0D0F;
+            outline: none;
         }
 
         /* Header Styles */
         .header {
             background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -197,13 +211,14 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
+
         .carousel-slide .container {
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-       
+
 
         .carousel-slide.active {
             opacity: 1;
@@ -262,7 +277,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0,0,0,0.5);
+            background: rgba(0, 0, 0, 0.5);
             color: white;
             border: none;
             padding: 1rem;
@@ -272,7 +287,7 @@
         }
 
         .carousel-nav:hover {
-            background: rgba(0,0,0,0.7);
+            background: rgba(0, 0, 0, 0.7);
         }
 
         .carousel-prev {
@@ -296,7 +311,7 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.5);
+            background: rgba(255, 255, 255, 0.5);
             border: none;
             cursor: pointer;
             transition: background 0.2s;
@@ -340,14 +355,14 @@
         .service-card {
             background: white;
             border-radius: 0.5rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .service-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .service-card-image {
@@ -367,7 +382,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0, 0, 0, 0.4);
         }
 
         .service-card-icon {
@@ -471,7 +486,7 @@
             background: white;
             padding: 2rem;
             border-radius: 1rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .range-container {
@@ -497,7 +512,7 @@
             border-radius: 50%;
             background: #27ae60;
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .range-slider::-moz-range-thumb {
@@ -507,7 +522,7 @@
             background: #27ae60;
             cursor: pointer;
             border: none;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         .range-labels {
@@ -575,7 +590,7 @@
             background: white;
             margin-bottom: 1rem;
             border-radius: 0.5rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
 
@@ -734,7 +749,7 @@
             }
 
             .carousel-nav {
-                top:90%;
+                top: 90%;
             }
 
             .carousel-content h1 {
@@ -760,7 +775,7 @@
             }
 
             .carousel-nav {
-                top:90%;
+                top: 90%;
             }
 
             .tab-nav {
@@ -778,6 +793,7 @@
                 opacity: 0;
                 transform: translateY(20px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -789,168 +805,172 @@
         }
 
         .service-cards {
-        display: flex;
-        gap: 1rem;
-        padding: 2rem;
-        justify-content: center;
-        flex-wrap: wrap;
-        background: #f4f4f4;
+            display: flex;
+            gap: 1rem;
+            padding: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            background: #f4f4f4;
         }
 
         .card {
-        position: relative;
-        overflow: hidden;
-        width: 300px;
-        height: 400px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-        cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            width: 300px;
+            height: 400px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            cursor: pointer;
         }
 
         .card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
         .card .label {
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        background: rgba(0,0,0,0.7);
-        color: #fff;
-        text-align: center;
-        padding: 1rem;
-        font-size: 1.2rem;
-        font-weight: bold;
-        transition: background 0.3s ease;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
         }
 
         /* ✨ Hover effect */
         .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
 
         .card:hover img {
-        transform: scale(1.1);
+            transform: scale(1.1);
         }
 
         .card:hover .label {
-        background: rgba(39, 174, 96, 0.9); /* zöldes */
+            background: rgba(39, 174, 96, 0.9);
+            /* zöldes */
         }
 
         /* --- 1) Alap: minden kártya színes, overlay rejtett --- */
 
-.service-cards .card {
-  filter: none;
-  position: relative;
-}
+        .service-cards .card {
+            filter: none;
+            position: relative;
+        }
 
-/* Az overlay-t alapból átlátszóvá, nem kattinthatóvá tesszük */
-.card .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.6);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  text-align: center;
-}
+        /* Az overlay-t alapból átlátszóvá, nem kattinthatóvá tesszük */
+        .card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            text-align: center;
+        }
 
-/* --- 2) Hoverkor: csak az épp aktív eltűri a szürke szűrőt --- */
+        /* --- 2) Hoverkor: csak az épp aktív eltűri a szürke szűrőt --- */
 
-/* amikor bármelyik fölé viszed az egeret, először mind
+        /* amikor bármelyik fölé viszed az egeret, először mind
    kártyára szürke szűrőt teszünk */
-.service-cards:hover .card {
-  filter: grayscale(100%);
-  transition: filter 0.3s ease;
-}
+        .service-cards:hover .card {
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
 
-/* aztán a konkrét .card:hover esetén visszaállítjuk */
-.service-cards .card:hover {
-  filter: none;
-}
+        /* aztán a konkrét .card:hover esetén visszaállítjuk */
+        .service-cards .card:hover {
+            filter: none;
+        }
 
-/* --- 3) Overlay megjelenítése kattintás nélkül: hoverkor --- */
+        /* --- 3) Overlay megjelenítése kattintás nélkül: hoverkor --- */
 
-.service-cards .card:hover .overlay {
-  opacity: 1;
-  pointer-events: auto;
-}
+        .service-cards .card:hover .overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
 
 
 
         .features {
-  max-width: 800px;
-  margin: 3rem auto;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding: 0 1rem;
-}
+            max-width: 800px;
+            margin: 3rem auto;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 0 1rem;
+        }
 
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  background: #ffffff;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 4rem;
-}
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: #ffffff;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 4rem;
+        }
 
-/* Páros elemeknél fordítjuk az irányt */
-.feature-item:nth-child(even) {
-  flex-direction: row-reverse;
-}
+        /* Páros elemeknél fordítjuk az irányt */
+        .feature-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
 
-/* Kép */
-.feature-item img {
-  flex-shrink: 0;
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
-}
+        /* Kép */
+        .feature-item img {
+            flex-shrink: 0;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
 
-/* Szöveg */
-.feature-text h2 {
-  margin-bottom: 0.5rem;
-  font-size: 1.7rem;
-}
-.feature-text p {
-  color: #555;
-  line-height: 1.4;
-  font-size: 1.05rem;
-}
+        /* Szöveg */
+        .feature-text h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.7rem;
+        }
 
-/* Mobilon mind függőleges */
-@media (max-width: 600px) {
-  .feature-item {
-    flex-direction: column !important;
-    text-align: center;
-  }
-  .feature-item img {
-    width: 100px;
-    height: 100px;
-  }
-}
-.noUi-connect {
-  background: #27ae60; /* zöld */
-}
+        .feature-text p {
+            color: #555;
+            line-height: 1.4;
+            font-size: 1.05rem;
+        }
 
+        /* Mobilon mind függőleges */
+        @media (max-width: 600px) {
+            .feature-item {
+                flex-direction: column !important;
+                text-align: center;
+            }
 
+            .feature-item img {
+                width: 100px;
+                height: 100px;
+            }
+        }
 
+        .noUi-connect {
+            background: #27ae60;
+            /* zöld */
+        }
     </style>
-    <!-- Csempék -->
     <style>
         .mobil-folyamat {
             display: none;
@@ -966,20 +986,29 @@
             overflow: visible;
             position: sticky;
         }
+
         .folyamat-wrapper {
             position: relative;
-            height: 400vh; /* 5 képernyőnyi görgetési tartomány */
+            height: 400vh;
+            /* 5 képernyőnyi görgetési tartomány */
             overflow: visible
-            }
+        }
 
-            .folyamat{
-        position: sticky; top: 0; height: 100vh;
-        background:#fff; z-index: 2; /* takarja a mögötte lévőt */
-        display:flex; flex-direction:column; justify-content:center; gap:24px;
-}
+        .folyamat {
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: #fff;
+            z-index: 2;
+            /* takarja a mögötte lévőt */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 24px;
+        }
 
 
-    
+
 
 
         .folyamat h3 {
@@ -992,11 +1021,13 @@
             margin-top: 5rem;
             margin-bottom: 3rem;
         }
+
         .folyamat-text-container {
             display: flex;
             justify-content: center;
             align-items: center;
         }
+
         .folyamat-text {
             max-width: 60%;
             font-family: 'Rubik', sans-serif;
@@ -1009,13 +1040,14 @@
             margin-right: 10rem;
 
         }
+
         .stepper-container {
             display: flex;
             justify-content: center;
             align-items: center;
             margin-top: 4rem;
             width: 100%;
-            
+
         }
 
         .stepper {
@@ -1028,8 +1060,8 @@
 
         .stepper-bar {
             height: 100%;
-            background: #22C373;   
-            width: 0%;  
+            background: #22C373;
+            width: 0%;
             transition: width 0.4s ease;
             border-radius: 5px;
         }
@@ -1070,36 +1102,55 @@
             margin-bottom: 0.5rem;
         }
 
-       .is-active{
-        color: #22C373 !important;
-       }
-       .not-active{
-        color: #FFFFFF !important;
-       }
+        .is-active {
+            color: #22C373 !important;
+        }
 
-       @keyframes pop-in {
-        0%   { transform: scale(0.7); opacity: 0; }
-        60%  { transform: scale(1.1); opacity: 1; }
-        100% { transform: scale(1); }
+        .not-active {
+            color: #FFFFFF !important;
+        }
+
+        @keyframes pop-in {
+            0% {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            60% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
 
         .flash-pop {
-        animation: pop-in 0.5s cubic-bezier(.2,.8,.2,1);
+            animation: pop-in 0.5s cubic-bezier(.2, .8, .2, 1);
         }
 
         @keyframes fade-slide-up {
-        0%   { transform: translateY(12px); opacity: 0; }
-        100% { transform: translateY(0);    opacity: 1; }
+            0% {
+                transform: translateY(12px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .flash-slide {
-        animation: fade-slide-up 0.6s ease-out;
+            animation: fade-slide-up 0.6s ease-out;
         }
 
         @media (max-width: 768px) {
             .folyamat-wrapper {
-               display: none;
+                display: none;
             }
+
             .folyamat {
                 display: none;
             }
@@ -1108,110 +1159,120 @@
                 display: block;
             }
 
-           
 
-            .mobil-folyamat{
-            /* legyen elég magas tartalom, hogy legyen mit görgetni */
-            padding: 24px 16px 80vh;  /* az utolsó érték ad extra görgetési utat, igény szerint */
-            background:#fff;
+
+            .mobil-folyamat {
+                /* legyen elég magas tartalom, hogy legyen mit görgetni */
+                padding: 24px 16px 80vh;
+                /* az utolsó érték ad extra görgetési utat, igény szerint */
+                background: #fff;
             }
-            .folyamat-container-mobil{
-            display:grid;
-            grid-template-columns: 12px 1fr;
-            gap:14px;
-            align-items:start;
+
+            .folyamat-container-mobil {
+                display: grid;
+                grid-template-columns: 12px 1fr;
+                gap: 14px;
+                align-items: start;
             }
 
             /* bal oldali sáv “tapad” a viewporthoz görgetés közben */
-            .stepper-container-mobil{
-            
-            top: 96px;             /* mennyire legyen lejjebb rögzítve */
-            height: calc(100vh - 140px);
-            }
-            .stepper-mobil{
-            width: 100%;
-            height: 165rem;
-            background:#e7eef3;
-            border-radius: 999px;
-            overflow:hidden;
-            }
-            .stepper-bar-mobil{
-            width: 100%;
-            height: 0%;
-            background:#22C373;
-            transition: height .25s ease; /* simítás */
+            .stepper-container-mobil {
+
+                top: 96px;
+                /* mennyire legyen lejjebb rögzítve */
+                height: calc(100vh - 140px);
             }
 
-            .roadmap-mobil{
-            display:flex;
-            flex-direction:column;
-            gap:20px;
+            .stepper-mobil {
+                width: 100%;
+                height: 165rem;
+                background: #e7eef3;
+                border-radius: 999px;
+                overflow: hidden;
             }
-            .roadmap-item-mobil{
-            padding:14px 12px;
-            border-radius:12px;
-            background:#ffffff;
-            color:#4a5a68;
-            transition: transform .25s ease, background .25s ease, color .25s ease;
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            justify-content:center;
+
+            .stepper-bar-mobil {
+                width: 100%;
+                height: 0%;
+                background: #22C373;
+                transition: height .25s ease;
+                /* simítás */
             }
+
+            .roadmap-mobil {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .roadmap-item-mobil {
+                padding: 14px 12px;
+                border-radius: 12px;
+                background: #ffffff;
+                color: #4a5a68;
+                transition: transform .25s ease, background .25s ease, color .25s ease;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
             .roadmap-item-mobil.is-active,
-            .roadmap-item-mobil.is-done{
-            background:#e9f8f1;
-            color:#0f7e53;
-            transform: translateX(4px);
+            .roadmap-item-mobil.is-done {
+                background: #e9f8f1;
+                color: #0f7e53;
+                transform: translateX(4px);
             }
 
-            .roadmap-item-mobil .roadmap-icon{
-            width: 8rem;
-            height: 8rem;
-            background-size: cover;
-            background-position: center;
-            border-radius: 50%;
-            margin-bottom: 0.5rem;
-            
+            .roadmap-item-mobil .roadmap-icon {
+                width: 8rem;
+                height: 8rem;
+                background-size: cover;
+                background-position: center;
+                border-radius: 50%;
+                margin-bottom: 0.5rem;
+
+            }
+
+            .activeh4 {
+                color: #22C373 !important;
+                font-weight: 600 !important;
+            }
+
+            .activep {
+                color: #4a5a68 !important;
+                font-weight: 400 !important;
+                text-align: center;
+            }
+
+            .notactiveh4 {
+                color: #ffffff !important;
+                font-weight: 600 !important;
+            }
+
+            .notactivep {
+                color: #ffffff !important;
+                font-weight: 400 !important;
+                text-align: center;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                }
+
+                to {
+                    opacity: 1;
+                }
+            }
+
+            .fade-in {
+                animation: fadeIn 0.6s ease forwards;
+            }
+
+
+
         }
-
-        .activeh4{
-            color: #22C373 !important;
-            font-weight: 600 !important;
-        }
-
-        .activep{
-            color: #4a5a68 !important;
-            font-weight: 400 !important;
-            text-align: center;
-        }
-
-        .notactiveh4 {
-            color: #ffffff !important;
-            font-weight: 600 !important;
-        }
-
-        .notactivep{
-            color: #ffffff !important;
-            font-weight: 400 !important;
-            text-align: center;
-        }
-
-        @keyframes fadeIn {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-        }
-
-        .fade-in {
-        animation: fadeIn 0.6s ease forwards;
-        }
-
-                        
-            
-        }
-
-       
-
     </style>
 </head>
 
@@ -1219,7 +1280,8 @@
 <body>
     <!-- Hero -->
     <section class="carousel" id="carousel">
-        <div class="carousel-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
+        <div class="carousel-slide active"
+            style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
             <div class="container">
                 <div class="carousel-content">
                     <h1>Inputanyagbeszerzés egy gombnyomásra</h1>
@@ -1229,7 +1291,8 @@
             </div>
         </div>
 
-        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
+        <div class="carousel-slide"
+            style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
             <div class="container">
                 <div class="carousel-content">
                     <h1>Átlátható árak, gyors szállítás</h1>
@@ -1239,7 +1302,8 @@
             </div>
         </div>
 
-        <div class="carousel-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
+        <div class="carousel-slide"
+            style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
             <div class="container">
                 <div class="carousel-content">
                     <h1>Országos lefedettség</h1>
@@ -1272,725 +1336,772 @@
     <!--Mobil Folyamat-->
     <section class="mobil-folyamat" id="mobilFolyamat">
         <div class="section-title">Egyszerű rendelési folyamat</div>
-      
-        <div class="folyamat-container-mobil">
-          <div class="stepper-container-mobil">
-            <div class="stepper-mobil">
-              <div class="stepper-bar-mobil"></div>
-            </div>
-          </div>
-      
-          <div class="roadmap-mobil" id="roadmapMobil">
-            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
-                <h4 class="not-active">Inputanyagigény</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/elso.png'); "></div>
-                <p class="not-active text-mobil">Inputanyagigény megadása – Tedd kosárba a szezonra szükséges termékeket.</p>
-            </div>
-            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
-                <h4 class="not-active">Ajánlatkérés</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/masodik.png'); "></div>
-                <p class="not-active text-mobil">Ajánlatkérés – több partnertől kapsz beárazást egy kattintással.</p>
-            </div>
-            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
-                <h4 class="not-active">Tendereztetés</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/harmadik.png'); "></div>
-                <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.</p>
-            </div>
-            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
-                <h4 class="not-active">Megrendelés</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/negyedik.png'); "></div>
-                <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.</p>
-            </div>
-            <div class="roadmap-item-mobil" style="margin-top: 15rem;">
-                <h4 class="not-active">Szállítás</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/otodik.png'); "></div>
-                <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.</p>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <script>
+        <div class="folyamat-container-mobil">
+            <div class="stepper-container-mobil">
+                <div class="stepper-mobil">
+                    <div class="stepper-bar-mobil"></div>
+                </div>
+            </div>
+
+            <div class="roadmap-mobil" id="roadmapMobil">
+                <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                    <h4 class="not-active">Inputanyagigény</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/elso.png'); "></div>
+                    <p class="not-active text-mobil">Inputanyagigény megadása – Tedd kosárba a szezonra szükséges
+                        termékeket.</p>
+                </div>
+                <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                    <h4 class="not-active">Ajánlatkérés</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/masodik.png'); "></div>
+                    <p class="not-active text-mobil">Ajánlatkérés – több partnertől kapsz beárazást egy kattintással.
+                    </p>
+                </div>
+                <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                    <h4 class="not-active">Tendereztetés</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/harmadik.png'); "></div>
+                    <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a
+                        szezonra.</p>
+                </div>
+                <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                    <h4 class="not-active">Megrendelés</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/negyedik.png'); "></div>
+                    <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a
+                        szezonra.</p>
+                </div>
+                <div class="roadmap-item-mobil" style="margin-top: 15rem;">
+                    <h4 class="not-active">Szállítás</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/otodik.png'); "></div>
+                    <p class="not-active text-mobil">Inputanyagigény megadása – itt állítod össze, mire van szükség a
+                        szezonra.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
         (() => {
             const stepTexts = [
-          "Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.",
-          "Ajánlatkérés – több partnertől kapsz beárazást egy kattintással.",
-          "Tendereztetés – automatikus összehasonlítás, átlátható feltételek.",
-          "Megrendelés – kiválasztod a legjobb ajánlatot és leadod a rendelést.",
-          "Szállítás – ütemezett, követhető kiszállítás a telephelyedre."
-        ];
-        const stepIconsGreen = [
-          './assets/elso.png',
-          './assets/masodik.png',
-          './assets/harmadik.png',
-          './assets/negyedik.png',
-          './assets/otodik.png'
-        ];
+                "Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.",
+                "Ajánlatkérés – több partnertől kapsz beárazást egy kattintással.",
+                "Tendereztetés – automatikus összehasonlítás, átlátható feltételek.",
+                "Megrendelés – kiválasztod a legjobb ajánlatot és leadod a rendelést.",
+                "Szállítás – ütemezett, követhető kiszállítás a telephelyedre."
+            ];
+            const stepIconsGreen = [
+                './assets/elso.png',
+                './assets/masodik.png',
+                './assets/harmadik.png',
+                './assets/negyedik.png',
+                './assets/otodik.png'
+            ];
 
-        const canAnimate = [true, true, true, true, true]
+            const canAnimate = [true, true, true, true, true]
 
-          const section   = document.getElementById('mobilFolyamat');
-          const bar       = section.querySelector('.stepper-bar-mobil');
-          const items     = Array.from(section.querySelectorAll('.roadmap-item-mobil'));
-        
-          // 5 lépés → 0%, 25%, 50%, 75%, 100% (0..1 tartományban)
-          const thresholds = [0.15, 0.25, 0.35, 0.5, 0.7];
-        
-          const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
-        
-          function getProgress() {
-            const rect = section.getBoundingClientRect();
-            const vh   = window.innerHeight;
-        
-            // mennyi a bejárható út a szekción belül (wrapper nélkül)
-            const total = section.offsetHeight - vh;
-            const passed = clamp(-rect.top, 0, total); // 0..total
-            return total > 0 ? (passed / total) : 0;   // 0..1
-          }
-        
-          function activeIndex(progress){
-            // utolsó küszöb index, ami <= progress
-            let idx = 0;
-            for (let i = 0; i < thresholds.length; i++) {
-              if (progress >= thresholds[i]) idx = i;
-            }
-            // items index 0..items.length-1
-            return Math.min(idx, items.length - 1);
-          }
-        
-          function render(){
-            const p = getProgress();             // 0..1
-            bar.style.height = (p * 150) + '%';  // nő a zöld sáv
-        
-            const idx = activeIndex(p);
-        
-            items.forEach((el, i) => {
-              const h = el.querySelector('h4');
-              const icon = el.querySelector('.roadmap-icon');
-              const text = el.querySelector('.text-mobil')
-              if(i == idx && canAnimate[i]) {
-                icon.classList.add("flash-pop"); // vagy flash-slide, flash-pulse
-                
-                h.classList.add("flash-pop");
-                h.addEventListener("animationend", () => {
-              h.classList.remove("flash-pop"); // hogy ne ragadjon rajta
-                }, { once: true });
+            const section = document.getElementById('mobilFolyamat');
+            const bar = section.querySelector('.stepper-bar-mobil');
+            const items = Array.from(section.querySelectorAll('.roadmap-item-mobil'));
 
-              icon.addEventListener("animationend", () => {
-              icon.classList.remove("flash-pop"); // hogy ne ragadjon rajta
-                }, { once: true });
+            // 5 lépés → 0%, 25%, 50%, 75%, 100% (0..1 tartományban)
+            const thresholds = [0.15, 0.25, 0.35, 0.5, 0.7];
 
-                setTimeout(() => {
-                text.classList.add('fade-in');
-                text.classList.add('activep')
-                // ha újra kell játszani máskor is, töröld a végén
-                text.addEventListener("animationend", () => {
-                text.classList.remove('fade-in');
-                }, { once: true });
-            }, 500);
-                canAnimate[i] = false; // csak egyszer animáljuk
+            const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+
+            function getProgress() {
+                const rect = section.getBoundingClientRect();
+                const vh = window.innerHeight;
+
+                // mennyi a bejárható út a szekción belül (wrapper nélkül)
+                const total = section.offsetHeight - vh;
+                const passed = clamp(-rect.top, 0, total); // 0..total
+                return total > 0 ? (passed / total) : 0;   // 0..1
             }
-            
-            else if (i <= idx){
-                text.classList.remove('notactivep');
-                h.classList.remove('notactiveh4');
-                h.classList.add('activeh4');
-                icon.style.backgroundImage = `url(${stepIconsGreen[i]})`;
-               
+
+            function activeIndex(progress) {
+                // utolsó küszöb index, ami <= progress
+                let idx = 0;
+                for (let i = 0; i < thresholds.length; i++) {
+                    if (progress >= thresholds[i]) idx = i;
+                }
+                // items index 0..items.length-1
+                return Math.min(idx, items.length - 1);
             }
-             else {
-                text.classList.remove('activep');
-                h.classList.remove('activeh4');
-                icon.style.backgroundImage = `url('')`;
-                h.classList.add('notactiveh4');
-                setTimeout(() => {
-                text.classList.add('notactivep');
-                }, 500); // 200ms késés, állíthatod nagyobbra is
-             }
-            });
-          }
-        
-          // sima és performáns görgetéskezelés
-          let ticking = false;
-          function onScroll(){
-            if(!ticking){
-              requestAnimationFrame(() => { render(); ticking = false; });
-              ticking = true;
+
+            function render() {
+                const p = getProgress();             // 0..1
+                bar.style.height = (p * 150) + '%';  // nő a zöld sáv
+
+                const idx = activeIndex(p);
+
+                items.forEach((el, i) => {
+                    const h = el.querySelector('h4');
+                    const icon = el.querySelector('.roadmap-icon');
+                    const text = el.querySelector('.text-mobil')
+                    if (i == idx && canAnimate[i]) {
+                        icon.classList.add("flash-pop"); // vagy flash-slide, flash-pulse
+
+                        h.classList.add("flash-pop");
+                        h.addEventListener("animationend", () => {
+                            h.classList.remove("flash-pop"); // hogy ne ragadjon rajta
+                        }, { once: true });
+
+                        icon.addEventListener("animationend", () => {
+                            icon.classList.remove("flash-pop"); // hogy ne ragadjon rajta
+                        }, { once: true });
+
+                        setTimeout(() => {
+                            text.classList.add('fade-in');
+                            text.classList.add('activep')
+                            // ha újra kell játszani máskor is, töröld a végén
+                            text.addEventListener("animationend", () => {
+                                text.classList.remove('fade-in');
+                            }, { once: true });
+                        }, 500);
+                        canAnimate[i] = false; // csak egyszer animáljuk
+                    }
+
+                    else if (i <= idx) {
+                        text.classList.remove('notactivep');
+                        h.classList.remove('notactiveh4');
+                        h.classList.add('activeh4');
+                        icon.style.backgroundImage = `url(${stepIconsGreen[i]})`;
+
+                    }
+                    else {
+                        text.classList.remove('activep');
+                        h.classList.remove('activeh4');
+                        icon.style.backgroundImage = `url('')`;
+                        h.classList.add('notactiveh4');
+                        setTimeout(() => {
+                            text.classList.add('notactivep');
+                        }, 500); // 200ms késés, állíthatod nagyobbra is
+                    }
+                });
             }
-          }
-        
-          window.addEventListener('scroll', onScroll, { passive:true });
-          window.addEventListener('resize', render, { passive:true });
-        
-          // init
-          render();
+
+            // sima és performáns görgetéskezelés
+            let ticking = false;
+            function onScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(() => { render(); ticking = false; });
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', render, { passive: true });
+
+            // init
+            render();
         })();
-        </script>
+    </script>
 
 
     <!-- Folyamat  -->
     <section class="folyamat-wrapper">
-    <section class="folyamat" id="folyamat">
-        <h3 data-aos="fade-left">Egyszerű rendelési folyamat</h3>
-        <div data-aos="fade-right" class="folyamat-text-container">
-            <p class="folyamat-text">
-                Az Input+ platformon keresztül egyszerűen és gyorsan rendelhet be minden szükséges inputanyagot. A felhasználóbarát felületünkön könnyedén böngészhet a termékek között, összehasonlíthatja az árakat és leadhatja rendelését egyetlen kattintással.
-            Ez a szöveg ami itt van ez fog változni
-            </p>
-        </div>
-        <div class="stepper-container">
-            <div class="stepper">
-                <div class="stepper-bar" style="width: 60%"></div>
+        <section class="folyamat" id="folyamat">
+            <h3 data-aos="fade-left">Egyszerű rendelési folyamat</h3>
+            <div data-aos="fade-right" class="folyamat-text-container">
+                <p class="folyamat-text">
+                    Az Input+ platformon keresztül egyszerűen és gyorsan rendelhet be minden szükséges inputanyagot. A
+                    felhasználóbarát felületünkön könnyedén böngészhet a termékek között, összehasonlíthatja az árakat
+                    és leadhatja rendelését egyetlen kattintással.
+                    Ez a szöveg ami itt van ez fog változni
+                </p>
             </div>
-        </div>
+            <div class="stepper-container">
+                <div class="stepper">
+                    <div class="stepper-bar" style="width: 60%"></div>
+                </div>
+            </div>
 
-        <div class="roadmap">
-            <div class="roadmap-item" data-aos="zoom-in">
-                <h4 class="not-active">Inputanyagigény</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/elso.png'); "></div>
+            <div class="roadmap">
+                <div class="roadmap-item" data-aos="zoom-in">
+                    <h4 class="not-active">Inputanyagigény</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/elso.png'); "></div>
+                </div>
+                <div class="roadmap-item">
+                    <h4 class="not-active">Ajánlatkérés</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/masodik.png'); "></div>
+                </div>
+                <div class="roadmap-item">
+                    <h4 class="not-active">Tendereztetés</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/harmadik.png'); "></div>
+                </div>
+                <div class="roadmap-item">
+                    <h4 class="not-active">Megrendelés</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/negyedik_.png'); "></div>
+                </div>
+                <div class="roadmap-item">
+                    <h4 class="not-active">Szállítás</h4>
+                    <div class="roadmap-icon" style="background-image: url('./assets/otodik_.png'); "></div>
+                </div>
             </div>
-            <div class="roadmap-item">
-                <h4 class="not-active">Ajánlatkérés</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/masodik.png'); "></div>
-            </div>
-            <div class="roadmap-item">
-                <h4 class="not-active">Tendereztetés</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/harmadik.png'); "></div>
-            </div>
-            <div class="roadmap-item">
-                <h4 class="not-active">Megrendelés</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/negyedik_.png'); "></div>
-            </div>
-            <div class="roadmap-item">
-                <h4 class="not-active">Szállítás</h4>
-                <div class="roadmap-icon" style="background-image: url('./assets/otodik_.png'); "></div>
-            </div>
-        </div>
+        </section>
     </section>
-</section>
-    
+
 
 
     <script>
 
-        
+
         // 1) Állomások szövegei (sorrendben)
         const stepTexts = [
-          "Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.",
-          "Ajánlatkérés – több partnertől kapsz beárazást egy kattintással.",
-          "Tendereztetés – automatikus összehasonlítás, átlátható feltételek.",
-          "Megrendelés – kiválasztod a legjobb ajánlatot és leadod a rendelést.",
-          "Szállítás – ütemezett, követhető kiszállítás a telephelyedre."
+            "Inputanyagigény megadása – itt állítod össze, mire van szükség a szezonra.",
+            "Ajánlatkérés – több partnertől kapsz beárazást egy kattintással.",
+            "Tendereztetés – automatikus összehasonlítás, átlátható feltételek.",
+            "Megrendelés – kiválasztod a legjobb ajánlatot és leadod a rendelést.",
+            "Szállítás – ütemezett, követhető kiszállítás a telephelyedre."
         ];
         const stepIconsGreen = [
-          './assets/elso.png',
-          './assets/masodik.png',
-          './assets/harmadik.png',
-          './assets/negyedik.png',
-          './assets/otodik.png'
+            './assets/elso.png',
+            './assets/masodik.png',
+            './assets/harmadik.png',
+            './assets/negyedik.png',
+            './assets/otodik.png'
         ];
         const stepIconsGray = [
-          './assets/elso_.png',
-          './assets/masodik_.png',
-          './assets/harmadik_.png',
-          './assets/negyedik_.png',
-          './assets/otodik_.png'
+            './assets/elso_.png',
+            './assets/masodik_.png',
+            './assets/harmadik_.png',
+            './assets/negyedik_.png',
+            './assets/otodik_.png'
         ];
 
         const canAnimate = [true, true, true, true, true];
         const wrapper = document.querySelector('.folyamat-wrapper');
         const folyamat = document.getElementById('folyamat');
-        const textEl   = folyamat.querySelector('.folyamat-text');
-        const barEl    = folyamat.querySelector('.stepper-bar');
-        const steps    = Array.from(folyamat.querySelectorAll('.roadmap-item'));
+        const textEl = folyamat.querySelector('.folyamat-text');
+        const barEl = folyamat.querySelector('.stepper-bar');
+        const steps = Array.from(folyamat.querySelectorAll('.roadmap-item'));
 
 
 
-      
-      
-        
+
+
+
         const thresholds = [5, 25, 50, 75, 100];
-      
+
         // Helper: adott százalékhoz melyik index az aktuális?
-        function getActiveIndex(pct){
-          // megkeressük az utolsó küszöböt, ami <= pct
-          let idx = 0;
-          for (let i=0; i<thresholds.length; i++){
-            if (pct >= thresholds[i]) idx = i;
-          }
-          return idx;
+        function getActiveIndex(pct) {
+            // megkeressük az utolsó küszöböt, ami <= pct
+            let idx = 0;
+            for (let i = 0; i < thresholds.length; i++) {
+                if (pct >= thresholds[i]) idx = i;
+            }
+            return idx;
         }
-      
+
         // 3) Állapot frissítése (sáv + lépések + szöveg)
-        function setProgress(pct){
-          pct = Math.max(0, Math.min(100, pct));
-          barEl.style.width = pct + '%';
-      
-          const activeIdx = getActiveIndex(pct);
-      
-          steps.forEach((el, i) => {
-            const h = el.querySelector('h4');
-            const icon = el.querySelector('.roadmap-icon');
-            if(i== activeIdx && canAnimate[i]) {
-                el.classList.add("flash-pop"); // vagy flash-slide, flash-pulse
-              el.addEventListener("animationend", () => {
-              el.classList.remove("flash-pop"); // hogy ne ragadjon rajta
-                }, { once: true });
-                canAnimate[i] = false; // csak egyszer animáljuk
-            }
-            else if(i<=activeIdx) {
-              h.classList.remove("not-active");
-              h.classList.add("is-active");
-              
-            } 
-            else {
-              h.classList.remove("is-active");
-              h.classList.add("not-active");
-              canAnimate[i] = true;
-            }
-            if(i <= activeIdx) {
-              icon.style.backgroundImage = `url(${stepIconsGreen[i]})`;
-            } else {
-                icon.style.backgroundImage = `url('')`;
-            }
-            
-            
-          });
-      
-          // Szöveg csere az aktív index szerint
-          textEl.textContent = stepTexts[activeIdx] || stepTexts[stepTexts.length-1];
+        function setProgress(pct) {
+            pct = Math.max(0, Math.min(100, pct));
+            barEl.style.width = pct + '%';
+
+            const activeIdx = getActiveIndex(pct);
+
+            steps.forEach((el, i) => {
+                const h = el.querySelector('h4');
+                const icon = el.querySelector('.roadmap-icon');
+                if (i == activeIdx && canAnimate[i]) {
+                    el.classList.add("flash-pop"); // vagy flash-slide, flash-pulse
+                    el.addEventListener("animationend", () => {
+                        el.classList.remove("flash-pop"); // hogy ne ragadjon rajta
+                    }, { once: true });
+                    canAnimate[i] = false; // csak egyszer animáljuk
+                }
+                else if (i <= activeIdx) {
+                    h.classList.remove("not-active");
+                    h.classList.add("is-active");
+
+                }
+                else {
+                    h.classList.remove("is-active");
+                    h.classList.add("not-active");
+                    canAnimate[i] = true;
+                }
+                if (i <= activeIdx) {
+                    icon.style.backgroundImage = `url(${stepIconsGreen[i]})`;
+                } else {
+                    icon.style.backgroundImage = `url('')`;
+                }
+
+
+            });
+
+            // Szöveg csere az aktív index szerint
+            textEl.textContent = stepTexts[activeIdx] || stepTexts[stepTexts.length - 1];
         }
-      
+
         // 4/A) Kattintásra is lehessen ugrani adott lépésre
         steps.forEach((el, i) => {
-          el.style.cursor = 'pointer';
-          el.addEventListener('click', () => setProgress(thresholds[i]));
+            el.style.cursor = 'pointer';
+            el.addEventListener('click', () => setProgress(thresholds[i]));
         });
-      
+
         // 4/B) (opcionális) görgetéshez kötött frissítés a szekcióban
         // A szekció saját magasságához normalizálunk
-       // Scrollból progress számítás (STABIL képlet sticky-hez)
-function updateFromScroll(){
-  const rect = wrapper.getBoundingClientRect();
-  const vh   = window.innerHeight;
+        // Scrollból progress számítás (STABIL képlet sticky-hez)
+        function updateFromScroll() {
+            const rect = wrapper.getBoundingClientRect();
+            const vh = window.innerHeight;
 
-  const totalScroll = wrapper.offsetHeight - vh;            // pl. 500vh - 100vh
-  const passed      = Math.min(Math.max(-rect.top, 0), totalScroll);
-  const progress    = totalScroll ? (passed / totalScroll) : 0; // 0..1
+            const totalScroll = wrapper.offsetHeight - vh;            // pl. 500vh - 100vh
+            const passed = Math.min(Math.max(-rect.top, 0), totalScroll);
+            const progress = totalScroll ? (passed / totalScroll) : 0; // 0..1
 
-  setProgress(progress * 100);
-}
+            setProgress(progress * 100);
+        }
 
-// Performáns scroll kezelő
-let ticking = false;
-function onScroll(){
-  if (!ticking){
-    requestAnimationFrame(() => { updateFromScroll(); ticking = false; });
-    ticking = true;
-  }
-}
+        // Performáns scroll kezelő
+        let ticking = false;
+        function onScroll() {
+            if (!ticking) {
+                requestAnimationFrame(() => { updateFromScroll(); ticking = false; });
+                ticking = true;
+            }
+        }
 
-window.addEventListener('scroll', onScroll, { passive:true });
-window.addEventListener('resize', updateFromScroll, { passive:true });
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', updateFromScroll, { passive: true });
 
-// Kezdő állapot
-setProgress(0);
-updateFromScroll();
-      </script>
-  
-  <script>
-    /* Scroll by one card on arrow click */
-    function scrollTiles(dir){
-      const track = document.getElementById('tiles');
-      const card = track.querySelector('.tile');
-      const gap = parseInt(getComputedStyle(track).gap) || 24;
-      const step = (card?.offsetWidth || 360) + gap;
-      track.scrollBy({ left: dir * step, behavior: 'smooth' });
-    }
-    
-    /* Reveal cards when they enter viewport */
-    (() => {
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in-view');
-            io.unobserve(e.target);
-          }
-        });
-      }, { root: document.querySelector('#tiles'), rootMargin: '0px 20% -10% 0px', threshold: 0.1 });
-    
-      document.querySelectorAll('.tile').forEach(t => io.observe(t));
-    })();
+        // Kezdő állapot
+        setProgress(0);
+        updateFromScroll();
     </script>
 
-<style>
-    .csempek {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: #FFFFFF;
-        padding-bottom: 5rem;
-        align-items: center;
-        overflow: hidden;
-    }
-    .csempek-container{
-        display:grid;
-        width:100%;
-        max-width:1100px;      /* opcionális, hogy középre és beférjen */
-        margin:0 auto;         /* középre igazítás */
-        padding-inline:10px;   /* belső oldalsó térköz */
-        grid-template-columns:repeat(3, minmax(0,1fr));
-        gap:10px;
-}
+    <script>
+        /* Scroll by one card on arrow click */
+        function scrollTiles(dir) {
+            const track = document.getElementById('tiles');
+            const card = track.querySelector('.tile');
+            const gap = parseInt(getComputedStyle(track).gap) || 24;
+            const step = (card?.offsetWidth || 360) + gap;
+            track.scrollBy({ left: dir * step, behavior: 'smooth' });
+        }
 
-    .row1 {
-    grid-template-columns: 2fr 1fr;
-    }
-    .row2 {
-    grid-template-columns: 1fr 2fr;
-    }
-    .row3 {
-    grid-template-columns: 1fr 1fr 1fr;
-}
-    .csempe-nagy{
-        height: 300px;
-        width: 100%;
-        background-color: #ffffff;
-        border-radius: 10px;
-        display: flex;
-        flex-direction: row;
-        border: 2px #EBEAED solid;
-    }
-    .csempe-kicsi {
-        height: 300px;
-        width: 100%;
-        background-color: #ffffff;
-        border-radius: 10px;
-        border: 2px #EBEAED solid;
-    }
-    .csempe-nagy .img-container {
-        background-position: center;
-        width: 300px;
-        height: 100%;
-        border-radius:  0 10px 10px 0;
-    }
-    .csempe-nagy .text-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 20px;
-        width: 100%;
-        margin-top: -90px;
-        margin-left: 20px;
-    }
+        /* Reveal cards when they enter viewport */
+        (() => {
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('in-view');
+                        io.unobserve(e.target);
+                    }
+                });
+            }, { root: document.querySelector('#tiles'), rootMargin: '0px 20% -10% 0px', threshold: 0.1 });
 
-    .csempe-kicsi .text-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding-left: 40px;
-        padding-bottom: 95px;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-    }
+            document.querySelectorAll('.tile').forEach(t => io.observe(t));
+        })();
+    </script>
 
-    .text-container .uppertext {
-        font-family: 'Rubik', sans-serif;
-        font-weight: 400;
-        font-size: 13px;
-        line-height: 24px;
-        color: #292929;
-        margin-bottom: 10px;
-        text-transform: uppercase;
-    }
-    .text-container h3 {
-        font-family: 'Rubik', sans-serif;
-        font-weight: 700;
-        font-size: 30px;
-        line-height: 30px;
-        color: #292929;
-        margin-bottom: 10px;
-    }
+    <style>
+        .csempek {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #FFFFFF;
+            padding-bottom: 5rem;
+            align-items: center;
+            overflow: hidden;
+        }
 
-    .csempe-kicsi .text-container h3 {
-        font-family: 'Rubik', sans-serif;
-        font-weight: 500;
-        font-size: 33px;
-        line-height: 40px;
-        color: #ffffff;
-        margin-bottom: 10px;
-    }
-    .csempe-kicsi .text-container .uppertext {
-        color: #ffffff;
-    }
+        .csempek-container {
+            display: grid;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-inline: 10px;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
 
-    .csempe-kicsi .text-container .description {
-        color: #ffffff;
-        font-weight: 400;
-        margin-top: 17px;
-    }
+        .row1 {
+            grid-template-columns: 2fr 1fr;
+        }
 
-    
+        .row2 {
+            grid-template-columns: 1fr 2fr;
+        }
 
-    .overlay {
+        .row3 {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
 
-       background: #22C37326;
+        .csempe-nagy {
+            height: 300px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: row;
+            border: 2px #EBEAED solid;
+        }
 
-    }
+        .csempe-kicsi {
+            height: 300px;
+            width: 100%;
+            background-color: #ffffff;
+            border-radius: 10px;
+            border: 2px #EBEAED solid;
+        }
 
-    .megnezem-button {
-        height: 36px;
-        width: 136px;
-        padding: 8px 10px 8px 15px;
-        background: #ffffff;
-        border: 1px solid rgba(175, 180, 182, 1);
-        border-radius: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: 'Rubik', sans-serif;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 24px;
-        cursor: pointer;
-        position: relative;
-        top:80px;
-    }
+        .csempe-nagy .img-container {
+            background-position: center;
+            width: 300px;
+            height: 100%;
+            border-radius: 0 10px 10px 0;
+        }
 
-    .uppertext {
-        letter-spacing: 2px;
-        font-weight: 400;
-    }
-    .kicsip {
-        margin-top: 20px;
-    }
+        .csempe-nagy .text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 20px;
+            width: 100%;
+            position: relative;
+            top: 10px;
+            left: 20px;
+        }
+        
 
-   /* ===== MOBIL (<=768px) — csak override, desktophoz nem nyúl ===== */
-@media (max-width: 768px){
+        .csempe-kicsi .text-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .csempe-kicsi .text-container .text-co {
+            position: relative;
+            top: 30px;
+            left: 30px;
+        }
 
-/* mutassuk a csempéket mobilon is */
-.csempek{
-  display:block;
-  padding-bottom: 3rem;
-}
+        .text-container .uppertext {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 24px;
+            color: #292929;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
 
-/* egy oszlopos lista, szép belső margóval */
-.csempek-container{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-  max-width: 640px;   /* hogy ne érjen ki teljesen a széléig */
-  padding: 0 16px;
-  margin: 0 auto;
-}
+        .text-container h3 {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 30px;
+            color: #292929;
+            margin-bottom: 10px;
+        }
 
-/* nagy, fehér kártya — csak szöveg (kép panelt mobilon elrejtjük) */
-.csempe-nagy{
-  min-height: 220px;
-  height: auto;
-  border-radius: 16px;
-  border: 1.5px solid #EBEAED;
-  box-shadow: 0 4px 10px rgba(0,0,0,.05);
-  display:block;          /* ne legyen kétoszlopos */
-  background:#fff;
-}
-.csempe-nagy .img-container{ display:none; } /* mobilon nem kell a jobb oldali kép */
+        .csempe-kicsi .text-container h3 {
+            font-family: 'Rubik', sans-serif;
+            font-weight: 500;
+            font-size: 33px;
+            line-height: 40px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
 
-.csempe-nagy .text-container{
-  margin: 0;
-  padding: 20px 20px 24px;
-}
+        .csempe-kicsi .text-container .uppertext {
+            color: #ffffff;
+        }
 
-/* tipók mobilon (mint a screenshoton) */
-.text-container .uppertext{
-  letter-spacing: .18em;
-  font-size: 12px;
-  line-height: 1.2;
-  color: #5b5b5b;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-.csempe-nagy .text-container h3{
-  font-size: 34px;
-  line-height: 1.05;
-  font-weight: 800;
-  color: #0B0D0F;
-  margin-bottom: 12px;
-}
-.csempe-nagy .text-container p{
-  font-size: 16px;
-  line-height: 1.6;
-  color: #373737;
-}
-
-/* zöld, képes kártyák (három alsó + a “Webshop” és “Akciók”) */
-.csempe-kicsi{
-  min-height: 220px;
-  height: auto;
-  border-radius: 16px;
-  border: none;               /* ne legyen szürke keret a zöldön */
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,.12);
-}
-.csempe-kicsi .text-container{
-  border-radius: 16px;        /* hogy a háttérkép is kerek legyen */
-  padding: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-height: 220px;
-  color: #fff;
-}
-.csempe-kicsi .text-container .uppertext{
-  color:#e8fff3;
-  letter-spacing: .18em;
-  font-size: 12px;
-  margin-bottom: 8px;
-}
-.csempe-kicsi .text-container h3{
-  color: #fff;
-  font-weight: 800;
-  font-size: 36px;
-  line-height: 1.06;
-  margin-bottom: 18px;
-}
-.csempe-kicsi .description{
-  color:#f1fff7;
-  font-size: 14px;
-  line-height: 1.55;
-}
-
-/* “MEGNÉZEM” gomb elhelyezés (mint a képen – a kép alján kicsit feljebb) */
-.megnezem-button{
-  align-self: flex-start;
-  margin-top: auto;  /* le a kártya aljára */
-  transform: translateY(12px);
-  height: 40px; width: 150px;
-  border-radius: 24px;
-  font-size: 14px;
-  color: #1a1a1a;
-  box-shadow: 0 6px 16px rgba(0,0,0,.18);
-}
+        .csempe-kicsi .text-container .description {
+            color: #ffffff;
+            font-weight: 400;
+            margin-top: 17px;
+        }
 
 
-}
 
-@media (max-width: 768px) {
-  .csempek-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* kártyák közti távolság */
-  }
+        .overlay {
 
-  .csempe-nagy,
-  .csempe-kicsi {
-    width: 100%;
-    height: auto;        /* hogy tartalomhoz igazodjon */
-    min-height: 220px;   /* ha akarsz fix magasságot */
-  }
+            background: #22C37326;
 
-  .csempe-nagy .img-container {
-    width: 100%; 
-    height: 180px;       /* kép magasság */
-    border-radius: 0 0 10px 10px;
-  }
+        }
 
-  .csempe-nagy .text-container {
-    margin: 0;
-    padding: 20px;
-  }
+        .megnezem-button {
+            height: 36px;
+            width: 136px;
+            padding: 8px 10px 8px 15px;
+            background: #ffffff;
+            border: 1px solid rgba(175, 180, 182, 1);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Rubik', sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 24px;
+            cursor: pointer;
+            position: relative;
+            top: 80px;
+        }
 
-  .csempe-kicsi .text-container {
-    padding: 20px;
-  }
+        .uppertext {
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
 
-  .megnezem-button {
-    position: static; /* ne csússzon le mobilon */
-    margin-top: 15px;
-  }
-}
+        .kicsip {
+            margin-top: 20px;
+        }
+
+       
+        @media (max-width: 768px) {
+
+            
+            .csempek {
+                display: block;
+                padding-bottom: 3rem;
+            }
+
+        
+            .csempek-container {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 18px;
+                max-width: 640px;
+                padding: 0 16px;
+                margin: 0 auto;
+            }
+
+            .csempe-nagy {
+                min-height: 220px;
+                height: auto;
+                border-radius: 16px;
+                border: 1.5px solid #EBEAED;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, .05);
+                display: block;
+                background: #fff;
+            }
+
+            .csempe-nagy .img-container {
+                display: none;
+            }
 
 
-</style>
-    <!-- Csempék --> 
+            .csempe-nagy .text-container {
+                margin: 0;
+                padding: 20px 20px 24px;
+            }
+
+            .text-container .uppertext {
+                letter-spacing: .18em;
+                font-size: 12px;
+                line-height: 1.2;
+                color: #5b5b5b;
+                text-transform: uppercase;
+                margin-bottom: 10px;
+            }
+
+            .csempe-nagy .text-container h3 {
+                font-size: 34px;
+                line-height: 1.05;
+                font-weight: 800;
+                color: #0B0D0F;
+                margin-bottom: 12px;
+            }
+
+            .csempe-nagy .text-container p {
+                
+                line-height: 1.6;
+                color: #373737;
+            }
+
+            .csempe-kicsi {
+                min-height: 220px;
+                height: auto;
+                border-radius: 16px;
+                border: none;
+                overflow: hidden;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, .12);
+            }
+
+            .csempe-kicsi .text-container {
+                border-radius: 16px;
+                padding: 22px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                min-height: 220px;
+                color: #fff;
+            }
+
+            .csempe-kicsi .text-container .uppertext {
+                color: #e8fff3;
+                letter-spacing: .18em;
+                font-size: 12px !important; 
+                margin-bottom: 8px;
+            }
+
+            .csempe-kicsi .text-container h3 {
+                color: #fff;
+                font-weight: 800;
+                font-size: 36px;
+                line-height: 1.06;
+                margin-bottom: 18px;
+            }
+
+            .csempe-kicsi .description {
+                color: #f1fff7;
+                font-size: 16px;
+                line-height: 1.55;
+            }
+
+            .megnezem-button {
+                align-self: flex-start;
+                margin-top: auto;
+                transform: translateY(12px);
+                height: 40px;
+                width: 150px;
+                border-radius: 24px;
+                font-size: 14px;
+                color: #1a1a1a;
+                box-shadow: 0 6px 16px rgba(0, 0, 0, .18);
+            }
+
+
+        }
+
+        @media (max-width: 768px) {
+            .csempek-container {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .csempe-nagy,
+            .csempe-kicsi {
+                width: 100%;
+                height: auto;
+                min-height: 220px;
+            }
+
+            .csempe-nagy .img-container {
+                width: 100%;
+                height: 180px;
+                border-radius: 0 0 10px 10px;
+            }
+
+            .csempe-nagy .text-container {
+                margin: 0;
+                padding: 5px;
+                position: relative;
+                top: 30px;
+                left: 20px;
+            }
+
+            .csempe-kicsi .text-container {
+                padding: 5px;
+            }
+            .csempe-kicsi .text-container .text-co {
+                position: relative;
+                top: 30px;
+                left: 20px;
+            }
+
+            .megnezem-button {
+                position: static;
+                margin-top: 15px;
+            }
+        }
+    </style>
+    <!-- Csempék -->
 
     <section class="csempek" id="csempek">
         <div class="csempek-container">
-                <div style="grid-column: span 2;" class="csempe-nagy"  data-aos="fade-right">
-                    <div class="text-container">
-                        <p class="uppertext">Átláthatóság</p>
-                        <h3>Árfigyelő</h3>
-                        <p>Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
-                    </div>
-                    <div class="img-container" style="background: 
+            <div style="grid-column: span 2;" class="csempe-nagy" data-aos="fade-right">
+                <div class="text-container">
+                    <p class="uppertext">Átláthatóság</p>
+                    <h3>Árfigyelő</h3>
+                    <p>Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
+                    <p class="hovertext">Ez a szöveg fog megjelenni ha rávisszük az egeret a vagy telefonon kattintunk a szövegre. A többi elfog tünni és ez marad yippiá joooo.</p>
+                </div>
+                <div class="img-container" style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.25), rgba(34, 195, 115, 0.35)), /* zöld overlay */
                     url('./assets/arfigyelo.jpg') center/cover no-repeat; background-position: right;">
-                        
-                    </div>
+
                 </div>
-                <div style="grid-column: span 1;"  class="csempe-kicsi" data-aos="fade-left" data-aos-delay="1000">
-                    <div class="text-container"  style="background-image: url('./assets/webshop.jpg'); background-position: center; background-size: cover; ">
+            </div>
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-left" data-aos-delay="300">
+                <div class="text-container"
+                    style="background-image: url('./assets/webshop.jpg'); background-position: center; background-size: cover; ">
+                    <div class="text-co">
                         <p class="uppertext">Átláthatóság</p>
                         <h3>Árfigyelő</h3>
-                        <div class="megnezem-button">
-                            MEGNÉZEM ➔
-                        </div>
                     </div>
                 </div>
+            </div>
 
-                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-right" data-aos-delay="1000">
-                     <div class="text-container"  style="background-image: url('./assets/Background.jpg'); background-position: center; background-size: cover; ">
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-right" data-aos-delay="300">
+                <div class="text-container"
+                    style="background-image: url('./assets/Background.jpg'); background-position: center; background-size: cover; ">
+                    <div class="text-co">
                         <p class="uppertext">Mennyi az annyi</p>
                         <h3>Kereskedői <br> Akciók</h3>
-                        <div class="megnezem-button">
-                            MEGNÉZEM ➔
-                        </div>
                     </div>
                 </div>
-                <div style="grid-column: span 2; " class="csempe-nagy" data-aos="fade-left" data-aos-delay="1100">
-                    <div class="text-container">
-                        <p class="uppertext">Átláthatóság</p>
-                        <h3>Készletkezelés</h3>
-                        <p>Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
-                        
-                    </div>
-                        <div class="img-container" style="background: 
+                <div class="tile-overlay">
+
+                </div>
+            </div>
+            <div style="grid-column: span 2; " class="csempe-nagy" data-aos="fade-left" data-aos-delay="400">
+                <div class="text-container">
+                    <p class="uppertext">Átláthatóság</p>
+                    <h3>Készletkezelés</h3>
+                    <p>Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
+
+                </div>
+                <div class="img-container" style="background: 
                         linear-gradient(rgba(34, 195, 115, 0.35), rgba(34, 195, 115, 0.55)), /* zöld overlay */
                         url('./assets/keszlet.jpg') center/cover no-repeat;">
-                            
-                        </div>
+
                 </div>
 
-                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1100">
-                    <div class="text-container"  style="background: 
+            </div>
+
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-container" style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/idojaras.jpg') center/cover no-repeat; background-position: right;">
+                    <div class="text-co">
                         <p class="uppertext kicsip">Visszajelzés</p>
                         <h3>Meteorológia</h3>
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
                 </div>
-                    
-                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1200">
-                    <div class="text-container"  style="background: 
+            </div>
+
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-container" style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/inputanyag_tervezo.jpg') center/cover no-repeat; background-position: right;">
+                    <div class="text-co">
                         <p class="uppertext kicsip">Átláthatóság</p>
                         <h3>Inputanyag</h3>
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
                 </div>
-                <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="1300">
-                    <div class="text-container"  style="background: 
+            </div>
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="400">
+                <div class="text-container" style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/kozossegi.jpg') center/cover no-repeat; background-position: right;">
+                    <div class="text-co">
                         <p class="uppertext kicsip">Visszajelzés</p>
                         <h3>Közösségi Adatok</h3>
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
                 </div>
+            </div>
         </div>
     </section>
 
@@ -2007,12 +2118,13 @@ updateFromScroll();
         }
 
         .map .container {
-            display:flex;
+            display: flex;
             flex-direction: row;
             margin: 0 auto;
             padding: 0 0.5rem;
             text-align: center;
         }
+
         .map .map-text {
             flex: 1;
             max-width: 70%;
@@ -2041,7 +2153,7 @@ updateFromScroll();
             color: #FFFFFF;
             text-align: left;
             margin-top: 0.5rem;
-            
+
         }
 
         .map-image {
@@ -2068,6 +2180,7 @@ updateFromScroll();
             box-shadow: 0px 3px 5px 0px #22C3734D;
 
         }
+
         .map-image-mobile {
             display: none;
         }
@@ -2076,86 +2189,93 @@ updateFromScroll();
             position: relative;
             width: 20px;
             height: 20px;
-            opacity:0;                 /* kezdetben rejtve */
-            transform:scale(.85);  
-        }
-
-        .pointer.aos-animate{
-        opacity:1;                 /* animáció után látszik */
-        transform:none;
-        transition:opacity .4s, transform .4s;
-        }
-
-        @media (max-width: 768px){
-        .map{
-            padding: 24px 0 40px;
-        }
-        .map .map-image {
-            display:none;
-        }
-        .map .container{
-            flex-direction: column;       /* térkép felül, szöveg alul */
-            gap: 20px;
-            align-items: stretch;
-            padding: 0 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .map .map-image-mobile{
-            display: flex;
-            order: 1;
-            width: 100%;
-            height: 240px;                /* mobil magasság */
-            margin: 0 auto;
-            border-radius: 12px;
-            background-position: center;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: relative;           /* a pöttyök abszolút ehhez képest */
-            overflow: hidden;
-        }
-        .map .map-text{
-            order: 2;
-            max-width: 100%;
-            margin: 0;
-            text-align: left;
-            display: flex;
-            align-items: center;
-        }
-        .map .section-title{
-            font-size: 2rem;              /* ~32px */
-            line-height: 1.2;
-            margin: 16px 0 8px;
-        }
-        .map .section-subtitle{
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 16px;
-        }
-        .map button{
-            width: 60%;
-            height: 48px;
-            font-size: 1rem;
-            border-radius: 28px;
-            margin-top: 20px;
-        }
-
-        /* pöttyök mobilon */
-        .map .pointer{
-            position: absolute;           /* fontos! */
-            width: 14px;
-            height: 14px;
-            opacity: 0;                   /* AOS előtt rejtett */
+            opacity: 0;
+            /* kezdetben rejtve */
             transform: scale(.85);
         }
-        .map .pointer.aos-animate{
+
+        .pointer.aos-animate {
             opacity: 1;
+            /* animáció után látszik */
             transform: none;
-            transition: opacity .35s, transform .35s;
-        }
+            transition: opacity .4s, transform .4s;
         }
 
+        @media (max-width: 768px) {
+            .map {
+                padding: 24px 0 40px;
+            }
+
+            .map .map-image {
+                display: none;
+            }
+
+            .map .container {
+                flex-direction: column;
+                gap: 20px;
+                align-items: stretch;
+                padding: 0 16px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .map .map-image-mobile {
+                display: flex;
+                order: 1;
+                width: 100%;
+                height: 240px;
+                margin: 0 auto;
+                border-radius: 12px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .map .map-text {
+                order: 2;
+                max-width: 100%;
+                margin: 0;
+                text-align: left;
+                display: flex;
+                align-items: center;
+            }
+
+            .map .section-title {
+                font-size: 2rem;
+                line-height: 1.2;
+                margin: 16px 0 8px;
+            }
+
+            .map .section-subtitle {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 16px;
+            }
+
+            .map button {
+                width: 60%;
+                height: 48px;
+                font-size: 1rem;
+                border-radius: 28px;
+                margin-top: 20px;
+            }
+            .map .pointer {
+                position: absolute;
+                width: 14px;
+                height: 14px;
+                opacity: 0;
+                transform: scale(.85);
+            }
+
+            .map .pointer.aos-animate {
+                opacity: 1;
+                transform: none;
+                transition: opacity .35s, transform .35s;
+            }
+        }
     </style>
 
     <!-- Map -->
@@ -2163,105 +2283,75 @@ updateFromScroll();
         <div class="container">
             <div class="map-text">
                 <h2 data-aos="fade-right" class="section-title">Folyamatosan bővülő kereskedői hálózat</h2>
-                <p data-aos="fade-left" class="section-subtitle">Placeholder szöveg -Kapcsolatot építünk ki a mindennapi készletkezeléseddel, így a megrendelésed papírmentesen az ügyviteli folyamatod része lehet. *Csak AgroVIR Global ügyfeleknek elérhető</p>
+                <p data-aos="fade-left" class="section-subtitle">Placeholder szöveg -Kapcsolatot építünk ki a mindennapi
+                    készletkezeléseddel, így a megrendelésed papírmentesen az ügyviteli folyamatod része lehet. *Csak
+                    AgroVIR Global ügyfeleknek elérhető</p>
                 <button data-aos="fade-left">CSATLAKOZOM KERESKEDŐKÉNT</button>
             </div>
             <div class="map-image-mobile" data-aos="fade-left" data-aos-once="true"
-                    style="background-image:url('./assets/map.png')">
+                style="background-image:url('./assets/map.png')">
                 <!-- Győr -->
-                <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="900" data-aos-anchor=".map-image-mobile"
-                    style="top: 32%; left: 23%;" />
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="900"
+                    data-aos-anchor=".map-image-mobile" style="top: 32%; left: 23%;" />
                 <!-- Marcali -->
-                <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="1200" data-aos-anchor=".map-image-mobile"
-                    style="top: 70%; left: 44%;" />
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1200"
+                    data-aos-anchor=".map-image-mobile" style="top: 70%; left: 44%;" />
                 <!-- Debrecen -->
-                <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="1500" data-aos-anchor=".map-image-mobile"
-                    style="top: 66%; left: 31%;" />
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1500"
+                    data-aos-anchor=".map-image-mobile" style="top: 66%; left: 31%;" />
                 <!-- Békéscsaba -->
-                <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="1800" data-aos-anchor=".map-image-mobile"
-                    style="top: 38%; left: 41%;" />
-                    <!-- Paks -->
-                    <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="2000" data-aos-anchor=".map-image-mobile"
-                    style="top: 55%; left: 52%;" />
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1800"
+                    data-aos-anchor=".map-image-mobile" style="top: 38%; left: 41%;" />
+                <!-- Paks -->
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2000"
+                    data-aos-anchor=".map-image-mobile" style="top: 55%; left: 52%;" />
 
-                    <!-- Szeged -->
-                    <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image-mobile"
-                    style="top: 75%; left: 64%;" />
+                <!-- Szeged -->
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2200"
+                    data-aos-anchor=".map-image-mobile" style="top: 75%; left: 64%;" />
 
-                    <!-- Veszprém -->
-                    <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="2400" data-aos-anchor=".map-image-mobile"
-                    style="top: 48%; left: 35%;" />
+                <!-- Veszprém -->
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
+                    data-aos-anchor=".map-image-mobile" style="top: 48%; left: 35%;" />
 
-                    <!-- Miskolc -->
-                    <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="2600" data-aos-anchor=".map-image-mobile"
-                    style="top: 30%; left: 32%;" />
+                <!-- Miskolc -->
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2600"
+                    data-aos-anchor=".map-image-mobile" style="top: 30%; left: 32%;" />
 
             </div>
             <div class="map-image" data-aos="fade-left" data-aos-once="true"
-                    style="background-image:url('./assets/map.png')">
+                style="background-image:url('./assets/map.png')">
                 <!-- Győr -->
-                <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="900" data-aos-anchor=".map-image"
-                    style="top: 32%; left: 13%;" />
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="900"
+                    data-aos-anchor=".map-image" style="top: 32%; left: 13%;" />
                 <!-- Marcali -->
-                <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="1200" data-aos-anchor=".map-image"
-                    style="top: 70%; left: 14%;" />
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1200"
+                    data-aos-anchor=".map-image" style="top: 70%; left: 14%;" />
                 <!-- Debrecen -->
-                <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="1500" data-aos-anchor=".map-image"
-                    style="top: 66%; left: 11%;" />
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1500"
+                    data-aos-anchor=".map-image" style="top: 66%; left: 11%;" />
                 <!-- Békéscsaba -->
-                <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="1800" data-aos-anchor=".map-image"
-                    style="top: 38%; left: 11%;" />
-                    <!-- Paks -->
-                    <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="2000" data-aos-anchor=".map-image"
-                    style="top: 55%; left: 2%;" />
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1800"
+                    data-aos-anchor=".map-image" style="top: 38%; left: 11%;" />
+                <!-- Paks -->
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2000"
+                    data-aos-anchor=".map-image" style="top: 55%; left: 2%;" />
 
-                    <!-- Szeged -->
-                    <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image"
-                    style="top: 75%; left: 14%;" />
+                <!-- Szeged -->
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2200"
+                    data-aos-anchor=".map-image" style="top: 75%; left: 14%;" />
 
-                    <!-- Veszprém -->
-                    <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="2400" data-aos-anchor=".map-image"
-                    style="top: 48%; left: 15%;" />
+                <!-- Veszprém -->
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
+                    data-aos-anchor=".map-image" style="top: 48%; left: 15%;" />
 
-                    <!-- Miskolc -->
-                    <img class="pointer"
-                    src="./assets/ellipse.png"
-                    data-aos="zoom-in" data-aos-delay="2600" data-aos-anchor=".map-image"
-                    style="top: 30%; left: 2%;" />
+                <!-- Miskolc -->
+                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2600"
+                    data-aos-anchor=".map-image" style="top: 30%; left: 2%;" />
 
             </div>
         </div>
-    
+
     </section>
 
 
@@ -2270,7 +2360,7 @@ updateFromScroll();
     <section class="section section-gray" id="faq">
         <div class="container">
             <h2 data-aos="fade-right" class="section-title">Gyakori kérdések</h2>
-            <p  data-aos="fade-left" class="section-subtitle">Közvetlen összeköttetés a kereskedőkkel</p>
+            <p data-aos="fade-left" class="section-subtitle">Közvetlen összeköttetés a kereskedőkkel</p>
 
             <div class="faq">
                 <div class="faq-item active" data-aos="fade-left" data-aos-delay="800" data-aos-offset="250">
@@ -2281,7 +2371,8 @@ updateFromScroll();
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Nem kell többé telefonálgatni, Excel fájlokat küldözgetni. Platformunkon keresztül közvetlenül kapcsolatba léphet a kereskedőkkel, valós idejű kommunikációval.</p>
+                        <p>Nem kell többé telefonálgatni, Excel fájlokat küldözgetni. Platformunkon keresztül
+                            közvetlenül kapcsolatba léphet a kereskedőkkel, valós idejű kommunikációval.</p>
                     </div>
                 </div>
 
@@ -2293,7 +2384,8 @@ updateFromScroll();
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Az árfigyelő automatikusan nyomon követi a piaci árakat és értesítést küld, ha a termékek ára a beállított tartományba esik.</p>
+                        <p>Az árfigyelő automatikusan nyomon követi a piaci árakat és értesítést küld, ha a termékek ára
+                            a beállított tartományba esik.</p>
                     </div>
                 </div>
 
@@ -2305,7 +2397,8 @@ updateFromScroll();
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>Elfogadjuk a banki átutalást, hitelkártyás fizetést és üzleti partnereink számára biztosítunk utólagos fizetési lehetőséget is.</p>
+                        <p>Elfogadjuk a banki átutalást, hitelkártyás fizetést és üzleti partnereink számára biztosítunk
+                            utólagos fizetési lehetőséget is.</p>
                     </div>
                 </div>
 
@@ -2317,20 +2410,21 @@ updateFromScroll();
                         </svg>
                     </button>
                     <div class="faq-answer">
-                        <p>A szállítási idő a termék típusától és a távolságtól függ, de általában 2-5 munkanap alatt teljesítjük a rendeléseket.</p>
+                        <p>A szállítási idő a termék típusától és a távolságtól függ, de általában 2-5 munkanap alatt
+                            teljesítjük a rendeléseket.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1200,      // animáció hossza ms-ban
-    once: true,          // csak egyszer fusson le
-    offset: 300
-  });
-</script>
+    <script>
+        AOS.init({
+            duration: 1200,      // animáció hossza ms-ban
+            once: true,          // csak egyszer fusson le
+            offset: 300
+        });
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
     <script>
         // Carousel functionality
@@ -2374,7 +2468,7 @@ updateFromScroll();
             // Remove active class from all tabs and panes
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.querySelectorAll('.tab-pane').forEach(pane => pane.classList.remove('active'));
-            
+
             // Add active class to clicked tab and corresponding pane
             event.target.classList.add('active');
             document.getElementById(tabId).classList.add('active');
@@ -2382,36 +2476,36 @@ updateFromScroll();
 
         // Range slider functionality
         // noUiSlider init
-const slider = document.getElementById('price-slider');
-noUiSlider.create(slider, {
-  start: [25, 75],      // a két fogantyú kezdőpozíciója
-  connect: true,        // a kettő közti sáv színezése
-  range: {
-    'min': 0,
-    'max': 100
-  },
-  step: 1
-});
+        const slider = document.getElementById('price-slider');
+        noUiSlider.create(slider, {
+            start: [25, 75],      // a két fogantyú kezdőpozíciója
+            connect: true,        // a kettő közti sáv színezése
+            range: {
+                'min': 0,
+                'max': 100
+            },
+            step: 1
+        });
 
-// Tartomány értékek megjelenítése
-const minValueEl = document.getElementById('minValue');
-const maxValueEl = document.getElementById('maxValue');
+        // Tartomány értékek megjelenítése
+        const minValueEl = document.getElementById('minValue');
+        const maxValueEl = document.getElementById('maxValue');
 
-slider.noUiSlider.on('update', (values) => {
-  minValueEl.textContent = Math.round(values[0]) + '%';
-  maxValueEl.textContent = Math.round(values[1]) + '%';
-});
+        slider.noUiSlider.on('update', (values) => {
+            minValueEl.textContent = Math.round(values[0]) + '%';
+            maxValueEl.textContent = Math.round(values[1]) + '%';
+        });
 
         // FAQ functionality
         function toggleFAQ(button) {
             const faqItem = button.parentElement;
             const isActive = faqItem.classList.contains('active');
-            
+
             // Close all FAQ items
             document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
             });
-            
+
             // Open clicked item if it wasn't active
             if (!isActive) {
                 faqItem.classList.add('active');
@@ -2429,7 +2523,7 @@ slider.noUiSlider.on('update', (values) => {
                         block: 'start'
                     });
                 }
-                
+
                 // Close mobile menu if open
                 const mobileMenu = document.getElementById('mobileMenu');
                 mobileMenu.classList.remove('active');
@@ -2437,7 +2531,8 @@ slider.noUiSlider.on('update', (values) => {
         });
 
         // Initialize range sliders
-        
+
     </script>
 </body>
+
 </html>
