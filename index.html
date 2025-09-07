@@ -1273,6 +1273,29 @@
 
 
         }
+
+        .logo {
+            height: 2.5rem;
+            position: relative;
+            top: 10px;
+            
+            
+        }
+
+        .carousel-slide {
+            display: flex;
+            flex-direction: column;
+            gap: 8rem;
+        }
+
+        .carousel-slide::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            backdrop-filter: blur(3px); /* elmosás */
+            background: rgba(0,0,0,0.3); /* sötétítés is hozzá */
+            z-index: 0;
+            }
     </style>
 </head>
 
@@ -1282,6 +1305,7 @@
     <section class="carousel" id="carousel">
         <div class="carousel-slide active"
             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
+            <img class="logo" src="./assets/input-white-colored.png" />
             <div class="container">
                 <div class="carousel-content">
                     <h1>Inputanyagbeszerzés egy gombnyomásra</h1>
@@ -1293,6 +1317,7 @@
 
         <div class="carousel-slide"
             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
+            <img class="logo" src="./assets/input-white-colored.png" />
             <div class="container">
                 <div class="carousel-content">
                     <h1>Átlátható árak, gyors szállítás</h1>
@@ -1304,6 +1329,7 @@
 
         <div class="carousel-slide"
             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
+            <img class="logo" src="./assets/input-white-colored.png" />
             <div class="container">
                 <div class="carousel-content">
                     <h1>Országos lefedettség</h1>
@@ -2235,8 +2261,21 @@
             opacity: 1;
             transform: scale(1);
             }
+        @media (max-width: 1240px) {
+            .map-text {
+                margin-left: 30px;
+                
+            }
+        }
 
-        @media (max-width: 768px) {
+        @media (max-width: 970px) {
+            .map-text {
+                margin-right: 10px in !important;
+                
+            }
+        }
+
+        @media (max-width: 890px) {
             .map {
                 padding: 24px 0 40px;
             }
@@ -2330,39 +2369,39 @@
                         preserveAspectRatio="xMidYMid meet" />
                   
                     <image class="dot" href="./assets/ellipse.png" x="600" y="420" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2400" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="1400" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="640" y="220" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2500" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="1500" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="370" y="250" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="1200" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="720" y="300" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2500" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="1500" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="200" y="400" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2600" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="1600" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="250" y="500" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2700" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="1700" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="800" y="100" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2800" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="1800" data-aos-anchor=".map-image-mobile" />
                     <image class="dot" href="./assets/ellipse.png" x="720" y="110" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2900" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="1900" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="650" y="140" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="3100" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="2100" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="500" y="96" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="3300" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="2300" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="200" y="340" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="3500" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="2500" data-aos-anchor=".map-image-mobile" />
 
                     <image class="dot" href="./assets/ellipse.png" x="240" y="190" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="3600" data-aos-anchor=".map-image-mobile" />
+                        data-aos="zoom-in" data-aos-delay="2600" data-aos-anchor=".map-image-mobile" />
 
                         <image class="dot" href="./assets/ellipse.png" x="250" y="300" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="2000" data-aos-anchor=".map-image-mobile" />
@@ -2380,41 +2419,41 @@
                     <image href="./assets/map.png" x="0" y="0" width="1000" height="600"
                         preserveAspectRatio="xMidYMid meet" />
                         <image class="dot" href="./assets/ellipse.png" x="250" y="300" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2000" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1000" data-aos-anchor=".map-image" />
                     <image class="dot" href="./assets/ellipse.png" x="600" y="400" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2100" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1100" data-aos-anchor=".map-image" />
                     <image class="dot" href="./assets/ellipse.png" x="520" y="280" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1200" data-aos-anchor=".map-image" />
                     <image class="dot" href="./assets/ellipse.png" x="470" y="400" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2300" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1300" data-aos-anchor=".map-image" />
 
                     <image class="dot" href="./assets/ellipse.png" x="600" y="420" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2400" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1400" data-aos-anchor=".map-image" />
 
                     <image class="dot" href="./assets/ellipse.png" x="640" y="220" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2500" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1500" data-aos-anchor=".map-image" />
 
                     <image class="dot" href="./assets/ellipse.png" x="370" y="250" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1200" data-aos-anchor=".map-image" />
 
                     <image class="dot" href="./assets/ellipse.png" x="720" y="300" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2500" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1500" data-aos-anchor=".map-image" />
 
                     <image class="dot" href="./assets/ellipse.png" x="200" y="400" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2600" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1600" data-aos-anchor=".map-image" />
 
                     <image class="dot" href="./assets/ellipse.png" x="250" y="500" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2700" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1700" data-aos-anchor=".map-image" />
 
                     <image class="dot" href="./assets/ellipse.png" x="800" y="100" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2800" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1800" data-aos-anchor=".map-image" />
                     <image class="dot" href="./assets/ellipse.png" x="720" y="110" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2900" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1900" data-aos-anchor=".map-image" />
                         <image class="dot" href="./assets/ellipse.png" x="600" y="96" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2900" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1900" data-aos-anchor=".map-image" />
                     
                     <image class="dot" href="./assets/ellipse.png" x="200" y="170" width="35" height="35"
-                        data-aos="zoom-in" data-aos-delay="2900" data-aos-anchor=".map-image" />
+                        data-aos="zoom-in" data-aos-delay="1900" data-aos-anchor=".map-image" />
 
 
 
@@ -2487,6 +2526,30 @@
             </div>
         </div>
     </section>
+
+
+    <style>
+        .footer {
+            width: 100%;
+            height: 20rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer img {
+            height: 3rem;
+        }
+    </style>
+
+    <!-- Footer -->
+    <section class="footer" style="background: 
+    linear-gradient(rgba(0, 80, 51, 0.75), rgba(0, 47, 28, 0.85)), /* zöld overlay */
+    url('./assets/hatter.jpg') center/cover no-repeat; background-position: right;">
+         <img src="./assets/input-colored-standalone.png" />
+    </section>
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
