@@ -1736,6 +1736,9 @@
             display: flex;
             flex-direction: row;
             border: 2px #EBEAED solid;
+            box-shadow: none;
+            transition: box-shadow 0.8s cubic-bezier(.25, .8, .25, 1),
+                transform 0.8s cubic-bezier(.25, .8, .25, 1);
         }
 
         .csempe-kicsi {
@@ -1744,6 +1747,20 @@
             background-color: #ffffff;
             border-radius: 10px;
             border: 2px #EBEAED solid;
+            box-shadow: none;
+            transition: box-shadow 0.8s cubic-bezier(.25, .8, .25, 1),
+                transform 0.8s cubic-bezier(.25, .8, .25, 1);
+        }
+
+        .csempe-nagy:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
+            /* kis emelkedés, opcionális */
+        }
+
+        .csempe-kicsi:hover {
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+            transform: translateY(-4px);
         }
 
         .csempe-nagy .img-container {
@@ -1763,17 +1780,18 @@
             top: 10px;
             left: 20px;
         }
-        
+
 
         .csempe-kicsi .text-container {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            
+
             width: 100%;
             height: 100%;
             border-radius: 10px;
         }
+
         .csempe-kicsi .text-container .text-co {
             position: relative;
             top: 30px;
@@ -1817,6 +1835,7 @@
             color: #ffffff;
             font-weight: 400;
             margin-top: 17px;
+            margin-right: 40px !important;
         }
 
 
@@ -1855,16 +1874,16 @@
             margin-top: 20px;
         }
 
-       
+
         @media (max-width: 768px) {
 
-            
+
             .csempek {
                 display: block;
                 padding-bottom: 3rem;
             }
 
-        
+
             .csempek-container {
                 display: grid;
                 grid-template-columns: 1fr;
@@ -1912,7 +1931,7 @@
             }
 
             .csempe-nagy .text-container p {
-                
+
                 line-height: 1.6;
                 color: #373737;
             }
@@ -1939,7 +1958,7 @@
             .csempe-kicsi .text-container .uppertext {
                 color: #e8fff3;
                 letter-spacing: .18em;
-                font-size: 12px !important; 
+                font-size: 12px !important;
                 margin-bottom: 8px;
             }
 
@@ -1955,6 +1974,7 @@
                 color: #f1fff7;
                 font-size: 16px;
                 line-height: 1.55;
+
             }
 
             .megnezem-button {
@@ -2003,6 +2023,7 @@
             .csempe-kicsi .text-container {
                 padding: 5px;
             }
+
             .csempe-kicsi .text-container .text-co {
                 position: relative;
                 top: 30px;
@@ -2024,7 +2045,8 @@
                     <p class="uppertext">Átláthatóság</p>
                     <h3>Árfigyelő</h3>
                     <p>Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
-                    <p class="hovertext">Ez a szöveg fog megjelenni ha rávisszük az egeret a vagy telefonon kattintunk a szövegre. A többi elfog tünni és ez marad yippiá joooo.</p>
+                    <p class="hovertext">Ez a szöveg fog megjelenni ha rávisszük az egeret a vagy telefonon kattintunk a
+                        szövegre. A többi elfog tünni és ez marad yippiá joooo.</p>
                 </div>
                 <div class="img-container" style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.25), rgba(34, 195, 115, 0.35)), /* zöld overlay */
@@ -2074,7 +2096,7 @@
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/idojaras.jpg') center/cover no-repeat; background-position: right;">
                     <div class="text-co">
-                        <p class="uppertext kicsip">Visszajelzés</p>
+                        <p class="uppertext">Visszajelzés</p>
                         <h3>Meteorológia</h3>
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
@@ -2086,7 +2108,7 @@
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/inputanyag_tervezo.jpg') center/cover no-repeat; background-position: right;">
                     <div class="text-co">
-                        <p class="uppertext kicsip">Átláthatóság</p>
+                        <p class="uppertext">Átláthatóság</p>
                         <h3>Inputanyag</h3>
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
@@ -2097,7 +2119,7 @@
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/kozossegi.jpg') center/cover no-repeat; background-position: right;">
                     <div class="text-co">
-                        <p class="uppertext kicsip">Visszajelzés</p>
+                        <p class="uppertext">Visszajelzés</p>
                         <h3>Közösségi Adatok</h3>
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
@@ -2202,6 +2224,18 @@
             transition: opacity .4s, transform .4s;
         }
 
+        .dot {
+            transform-box: fill-box;
+            transform-origin: 50% 50%;
+            opacity: 0;
+            transform: scale(0.85);
+        }
+
+        .map-image .dot.aos-animate {
+            opacity: 1;
+            transform: scale(1);
+            }
+
         @media (max-width: 768px) {
             .map {
                 padding: 24px 0 40px;
@@ -2263,6 +2297,7 @@
                 border-radius: 28px;
                 margin-top: 20px;
             }
+
             .map .pointer {
                 position: absolute;
                 width: 14px;
@@ -2289,117 +2324,105 @@
                     AgroVIR Global ügyfeleknek elérhető</p>
                 <button data-aos="fade-left">CSATLAKOZOM KERESKEDŐKÉNT</button>
             </div>
-            <div class="map-image-mobile" data-aos="fade-left" data-aos-once="true"
-                style="background-image:url('./assets/map.png')">
-                <!-- Győr -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="900"
-                    data-aos-anchor=".map-image-mobile" style="top: 32%; left: 23%;" />
-                <!-- Marcali -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1200"
-                    data-aos-anchor=".map-image-mobile" style="top: 70%; left: 44%;" />
-                <!-- Debrecen -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1500"
-                    data-aos-anchor=".map-image-mobile" style="top: 66%; left: 31%;" />
-                <!-- Békéscsaba -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1800"
-                    data-aos-anchor=".map-image-mobile" style="top: 38%; left: 41%;" />
-                <!-- Paks -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2000"
-                    data-aos-anchor=".map-image-mobile" style="top: 55%; left: 52%;" />
+            <div class="map-image-mobile" data-aos="fade-left" data-aos-once="true">
+                <svg viewBox="0 0 1000 600" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+                    <image href="./assets/map.png" x="0" y="0" width="1000" height="600"
+                        preserveAspectRatio="xMidYMid meet" />
+                  
+                    <image class="dot" href="./assets/ellipse.png" x="600" y="420" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2400" data-aos-anchor=".map-image-mobile" />
 
-                <!-- Szeged -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2200"
-                    data-aos-anchor=".map-image-mobile" style="top: 75%; left: 64%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="640" y="220" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2500" data-aos-anchor=".map-image-mobile" />
 
-                <!-- Veszprém -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                    data-aos-anchor=".map-image-mobile" style="top: 48%; left: 35%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="370" y="250" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image-mobile" />
 
-                <!-- Miskolc -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2600"
-                    data-aos-anchor=".map-image-mobile" style="top: 30%; left: 32%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="720" y="300" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2500" data-aos-anchor=".map-image-mobile" />
 
-                    <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2200"
-                    data-aos-anchor=".map-image-mobile" style="top: 45%; left: 54%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="200" y="400" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2600" data-aos-anchor=".map-image-mobile" />
 
-                <!-- Veszprém -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                    data-aos-anchor=".map-image-mobile" style="top: 58%; left: 45%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="250" y="500" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2700" data-aos-anchor=".map-image-mobile" />
 
-                    <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2200"
-                    data-aos-anchor=".map-image-mobile" style="top: 35%; left: 61%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="800" y="100" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2800" data-aos-anchor=".map-image-mobile" />
+                    <image class="dot" href="./assets/ellipse.png" x="720" y="110" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2900" data-aos-anchor=".map-image-mobile" />
 
-                <!-- Veszprém -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                    data-aos-anchor=".map-image-mobile" style="top: 48%; left: 59%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="650" y="140" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="3100" data-aos-anchor=".map-image-mobile" />
 
-                    <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                    data-aos-anchor=".map-image-mobile" style="top: 58%; left: 53%;" />
-                    <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                    data-aos-anchor=".map-image-mobile" style="top: 48%; left: 39%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="500" y="96" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="3300" data-aos-anchor=".map-image-mobile" />
 
+                    <image class="dot" href="./assets/ellipse.png" x="200" y="340" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="3500" data-aos-anchor=".map-image-mobile" />
 
+                    <image class="dot" href="./assets/ellipse.png" x="240" y="190" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="3600" data-aos-anchor=".map-image-mobile" />
+
+                        <image class="dot" href="./assets/ellipse.png" x="250" y="300" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2000" data-aos-anchor=".map-image-mobile" />
+                    <image class="dot" href="./assets/ellipse.png" x="600" y="400" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2100" data-aos-anchor=".map-image-mobile" />
+                    <image class="dot" href="./assets/ellipse.png" x="520" y="280" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image-mobile" />
+                    <image class="dot" href="./assets/ellipse.png" x="470" y="400" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2300" data-aos-anchor=".map-image-mobile" />
+
+                </svg>
             </div>
-            <div class="map-image" data-aos="fade-left" data-aos-once="true"
-                style="background-image:url('./assets/map.png')">
-                <!-- Győr -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="900"
-                    data-aos-anchor=".map-image" style="top: 32%; left: 13%;" />
-                <!-- Marcali -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1200"
-                    data-aos-anchor=".map-image" style="top: 70%; left: 14%;" />
-                <!-- Debrecen -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1500"
-                    data-aos-anchor=".map-image" style="top: 66%; left: 11%;" />
-                <!-- Békéscsaba -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="1800"
-                    data-aos-anchor=".map-image" style="top: 38%; left: 11%;" />
-                <!-- Paks -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2000"
-                    data-aos-anchor=".map-image" style="top: 55%; left: 2%;" />
+            <div class="map-image" data-aos="fade-left" data-aos-once="true">
+                <svg viewBox="0 0 1000 600" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
+                    <image href="./assets/map.png" x="0" y="0" width="1000" height="600"
+                        preserveAspectRatio="xMidYMid meet" />
+                    <image class="dot" href="./assets/ellipse.png" x="250" y="300" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2000" data-aos-anchor=".map-image" />
+                    <image class="dot" href="./assets/ellipse.png" x="600" y="400" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2100" data-aos-anchor=".map-image" />
+                    <image class="dot" href="./assets/ellipse.png" x="520" y="280" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image" />
+                    <image class="dot" href="./assets/ellipse.png" x="470" y="400" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2300" data-aos-anchor=".map-image" />
 
-                <!-- Szeged -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2200"
-                    data-aos-anchor=".map-image" style="top: 75%; left: 14%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="600" y="420" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2400" data-aos-anchor=".map-image" />
 
-                <!-- Veszprém -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                    data-aos-anchor=".map-image" style="top: 48%; left: 15%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="640" y="220" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2500" data-aos-anchor=".map-image" />
 
-                <!-- Miskolc -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2600"
-                    data-aos-anchor=".map-image" style="top: 30%; left: 2%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="370" y="250" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2200" data-aos-anchor=".map-image" />
 
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2000"
-                    data-aos-anchor=".map-image" style="top: 34%; left: 12%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="720" y="300" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2500" data-aos-anchor=".map-image" />
 
-                <!-- Szeged -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2200"
-                    data-aos-anchor=".map-image" style="top: 28%; left: 11%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="200" y="400" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2600" data-aos-anchor=".map-image" />
 
-                <!-- Veszprém -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                    data-aos-anchor=".map-image" style="top: 25%; left: 10%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="250" y="500" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2700" data-aos-anchor=".map-image" />
 
-                <!-- Miskolc -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2600"
-                    data-aos-anchor=".map-image" style="top: 31%; left: 3%;" />
-                
-                 <!-- Veszprém -->
-                 <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                 data-aos-anchor=".map-image" style="top: 34%; left: 2%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="800" y="100" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2800" data-aos-anchor=".map-image" />
+                    <image class="dot" href="./assets/ellipse.png" x="720" y="110" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="2900" data-aos-anchor=".map-image" />
 
-                <!-- Miskolc -->
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2600"
-                    data-aos-anchor=".map-image" style="top: 38%; left: 0%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="650" y="140" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="3100" data-aos-anchor=".map-image" />
 
-                <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                    data-aos-anchor=".map-image" style="top: 44%; left: -12%;" />
+                    <image class="dot" href="./assets/ellipse.png" x="500" y="95" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="3300" data-aos-anchor=".map-image" />
 
-                    <img class="pointer" src="./assets/ellipse.png" data-aos="zoom-in" data-aos-delay="2400"
-                    data-aos-anchor=".map-image" style="top: 44%;  opacity: 0;" />
-   
+                    <image class="dot" href="./assets/ellipse.png" x="200" y="340" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="3500" data-aos-anchor=".map-image" />
 
+                    <image class="dot" href="./assets/ellipse.png" x="240" y="190" width="35" height="35"
+                        data-aos="zoom-in" data-aos-delay="3600" data-aos-anchor=".map-image" />
+                </svg>
             </div>
         </div>
 
