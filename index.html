@@ -1278,8 +1278,8 @@
             height: 2.5rem;
             position: relative;
             top: 10px;
-            
-            
+
+
         }
 
         .carousel-slide {
@@ -1292,10 +1292,12 @@
             content: "";
             position: absolute;
             inset: 0;
-            backdrop-filter: blur(3px); /* elmosás */
-            background: rgba(0,0,0,0.3); /* sötétítés is hozzá */
+            backdrop-filter: blur(3px);
+            /* elmosás */
+            background: rgba(0, 0, 0, 0.3);
+            /* sötétítés is hozzá */
             z-index: 0;
-            }
+        }
     </style>
 </head>
 
@@ -1310,7 +1312,8 @@
                 <div class="carousel-content">
                     <h1>Inputanyagbeszerzés egy gombnyomásra</h1>
                     <p>Egyszerűsítse le a termékbeszerzési folyamatokat modern digitális megoldásokkal</p>
-                    <button onclick="window.location.href='https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp'">KIPROBÁLOM</button>
+                    <button
+                        onclick="window.location.href='https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp'">KIPROBÁLOM</button>
                 </div>
             </div>
         </div>
@@ -1322,7 +1325,8 @@
                 <div class="carousel-content">
                     <h1>Átlátható árak, gyors szállítás</h1>
                     <p>Hasonlítsa össze az árakat és válassza a legjobb ajánlatot</p>
-                    <button onclick="window.location.href='https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp'">KIPROBÁLOM</button>
+                    <button
+                        onclick="window.location.href='https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp'">KIPROBÁLOM</button>
                 </div>
             </div>
         </div>
@@ -1334,7 +1338,8 @@
                 <div class="carousel-content">
                     <h1>Országos lefedettség</h1>
                     <p>Megbízható szállítás az egész országban</p>
-                    <button onclick="window.location.href='https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp'">KIPROBÁLOM</button>
+                    <button
+                        onclick="window.location.href='https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp'">KIPROBÁLOM</button>
                 </div>
             </div>
         </div>
@@ -1740,6 +1745,14 @@
             padding-inline: 10px;
             grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 10px;
+            grid-auto-flow: dense;
+        }
+
+        .csempe--expanded {
+            grid-column: span 2;
+            /* szélességben két oszlop */
+            grid-row: span 2;
+            /* és két sor magas (ha szeretnéd) */
         }
 
         .row1 {
@@ -1762,9 +1775,8 @@
             display: flex;
             flex-direction: row;
             border: 2px #EBEAED solid;
-            box-shadow: none;
-            transition: box-shadow 0.8s cubic-bezier(.25, .8, .25, 1),
-                transform 0.8s cubic-bezier(.25, .8, .25, 1);
+
+
         }
 
         .csempe-kicsi {
@@ -1773,20 +1785,30 @@
             background-color: #ffffff;
             border-radius: 10px;
             border: 2px #EBEAED solid;
-            box-shadow: none;
-            transition: box-shadow 0.8s cubic-bezier(.25, .8, .25, 1),
-                transform 0.8s cubic-bezier(.25, .8, .25, 1);
+
         }
 
-        .csempe-nagy:hover {
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-            transform: translateY(-4px);
-            /* kis emelkedés, opcionális */
+        /* Alap: készüljünk a transzformra */
+        .csempe-nagy,
+        .csempe-kicsi {
+            position: relative;
+            /* kell a z-index-hez */
+            z-index: 0;
+            /* simább animáció */
+            transform-origin: center;
+            /* középről nőjön */
+            
         }
 
+        /* Hoverkor legyen előrébb és tényleg látszódjon */
+        .csempe-nagy:hover,
         .csempe-kicsi:hover {
-            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-            transform: translateY(-4px);
+            z-index: 10;
+            /* a szomszédok fölé kerül */
+            transform: scale(1.017) !important;
+
+            /* vagy scaleX(1.04), ha “szélesedést” akarsz */
+            cursor: pointer;
         }
 
         .csempe-nagy .img-container {
@@ -2061,48 +2083,193 @@
                 margin-top: 15px;
             }
         }
+
+        .csempe-kicsi .text-container .plusz {
+            position: absolute;
+            top: 82%;
+            left: 85%;
+        }
+
+        .csempe-kicsi .text-container .plusz-k {
+            position: absolute;
+            top: 82%;
+            left: 85%;
+        }
+
+        .plusz-l {
+            position: absolute;
+            top: 82%;
+            left: 92%;
+        }
+
+
+        /* Alap állapotban rejtve */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: none;
+        }
+
+        .modal.is-open {
+            display: block;
+        }
+
+        /* Háttér: sötétítés + blur */
+        .modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(6px);
+        }
+
+        /* Panel: középre, nagy kerekítés, shadow, scroll */
+        .modal-panel {
+            position: relative;
+            margin: 4vh auto;
+            max-width: 1000px;
+            max-height: 92vh;
+            overflow: auto;
+            background: #fff;
+            border-radius: 28px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, .25);
+            padding: 32px 24px 40px;
+            /* animáció induló állapota */
+            opacity: 0;
+            transform: translateY(12px) scale(.98);
+            transition: transform .35s cubic-bezier(.22, .61, .36, 1), opacity .35s ease;
+        }
+
+        /* Nyitott állapot animáció végállapota */
+        .modal.is-open .modal-panel {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-close {
+            position: sticky;
+            top: 16px;
+            float: right;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 0;
+            background: #1f1f1f;
+            color: #fff;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Fejléc tipográfia – Apple-s vibe */
+        .eyebrow {
+            font-weight: 600;
+            color: #1f1f1f;
+            margin: 4px 0 8px;
+        }
+
+        #modal-title {
+            font-size: clamp(28px, 4vw, 56px);
+            line-height: 1.05;
+            font-weight: 800;
+        }
+
+        /* Kártya jellegű blokk */
+        .hero-card {
+            margin-top: 28px;
+            background: #f5f5f7;
+            border-radius: 24px;
+            padding: 24px;
+            display: grid;
+            gap: 20px;
+            grid-template-columns: 1.1fr 1fr;
+        }
+
+        .hero-card img {
+            width: 100%;
+            border-radius: 20px;
+            display: block;
+        }
+
+        @media (max-width: 800px) {
+            .modal-panel {
+                margin: 0;
+                max-width: none;
+                max-height: 100vh;
+                border-radius: 0;
+            }
+
+            .hero-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Kevesebb mozgás beállítás tisztelete */
     </style>
     <!-- Csempék -->
 
     <section class="csempek" id="csempek">
         <div class="csempek-container">
-            <div style="grid-column: span 2;" class="csempe-nagy" data-aos="fade-right">
+            <div style="grid-column: span 2;" class="csempe-nagy" data-aos="fade-right"
+                data-modal-target="#modal-arfigyelo">
                 <div class="text-container">
                     <p class="uppertext">Átláthatóság</p>
                     <h3>Árfigyelő</h3>
                     <p>Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
-                    <p class="hovertext">Ez a szöveg fog megjelenni ha rávisszük az egeret a vagy 
-                       </p>
+                    <p class="hovertext">Ez a szöveg fog megjelenni ha rávisszük az egeret a vagy
+                    </p>
                 </div>
                 <div class="img-container" style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.25), rgba(34, 195, 115, 0.35)), /* zöld overlay */
                     url('./assets/arfigyelo.jpg') center/cover no-repeat; background-position: right;">
 
                 </div>
+                <svg class="plusz-l" width="40" height="40" viewBox="0 0 40 40" aria-label="Add" role="img">
+                    <!-- Kör -->
+                    <circle cx="20" cy="20" r="18" fill="#ffffff" />
+                    <!-- Plusz: két vonal, kerek véggel -->
+                    <path d="M20 12 v16 M12 20 h16" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
+                </svg>
             </div>
-            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-left" data-aos-delay="300">
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-left" data-aos-delay="300"
+                data-modal-target="#modal-webshop">
                 <div class="text-container"
                     style="background-image: url('./assets/webshop.jpg'); background-position: center; background-size: cover; ">
                     <div class="text-co">
                         <p class="uppertext">Átláthatóság</p>
                         <h3>Árfigyelő</h3>
                     </div>
+                    <svg class="plusz-k" width="40" height="40" viewBox="0 0 40 40" aria-label="Add" role="img">
+                        <!-- Kör -->
+                        <circle cx="20" cy="20" r="18" fill="#ffffff" />
+                        <!-- Plusz: két vonal, kerek véggel -->
+                        <path d="M20 12 v16 M12 20 h16" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
+                    </svg>
                 </div>
+
             </div>
 
-            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-right" data-aos-delay="300">
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-right" data-aos-delay="300"
+                data-modal-target="#modal-kereskedoi">
                 <div class="text-container"
                     style="background-image: url('./assets/Background.jpg'); background-position: center; background-size: cover; ">
                     <div class="text-co">
                         <p class="uppertext">Mennyi az annyi</p>
                         <h3>Kereskedői <br> Akciók</h3>
                     </div>
+                    <svg class="plusz-k" width="40" height="40" viewBox="0 0 40 40" aria-label="Add" role="img">
+                        <!-- Kör -->
+                        <circle cx="20" cy="20" r="18" fill="#ffffff" />
+                        <!-- Plusz: két vonal, kerek véggel -->
+                        <path d="M20 12 v16 M12 20 h16" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
+                    </svg>
                 </div>
-                <div class="tile-overlay">
 
-                </div>
+
             </div>
-            <div style="grid-column: span 2; " class="csempe-nagy" data-aos="fade-left" data-aos-delay="400">
+            <div style="grid-column: span 2; " class="csempe-nagy" data-aos="fade-left" data-aos-delay="400"
+                data-modal-target="#modal-keszletkezeles">
                 <div class="text-container">
                     <p class="uppertext">Átláthatóság</p>
                     <h3>Készletkezelés</h3>
@@ -2114,10 +2281,17 @@
                         url('./assets/keszlet.jpg') center/cover no-repeat;">
 
                 </div>
+                <svg class="plusz-l" width="40" height="40" viewBox="0 0 40 40" aria-label="Add" role="img">
+                    <!-- Kör -->
+                    <circle cx="20" cy="20" r="18" fill="#ffffff" />
+                    <!-- Plusz: két vonal, kerek véggel -->
+                    <path d="M20 12 v16 M12 20 h16" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
+                </svg>
 
             </div>
 
-            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="200">
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="200"
+                data-modal-target="#modal-meteorologia">
                 <div class="text-container" style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/idojaras.jpg') center/cover no-repeat; background-position: right;">
@@ -2126,10 +2300,17 @@
                         <h3>Meteorológia</h3>
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
+                    <svg class="plusz" width="40" height="40" viewBox="0 0 40 40" aria-label="Add" role="img">
+                        <!-- Kör -->
+                        <circle cx="20" cy="20" r="18" fill="#ffffff" />
+                        <!-- Plusz: két vonal, kerek véggel -->
+                        <path d="M20 12 v16 M12 20 h16" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
+                    </svg>
                 </div>
             </div>
 
-            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="300">
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="300"
+                data-modal-target="#modal-inputanyag">
                 <div class="text-container" style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/inputanyag_tervezo.jpg') center/cover no-repeat; background-position: right;">
@@ -2138,9 +2319,16 @@
                         <h3>Inputanyag</h3>
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
+                    <svg class="plusz" width="40" height="40" viewBox="0 0 40 40" aria-label="Add" role="img">
+                        <!-- Kör -->
+                        <circle cx="20" cy="20" r="18" fill="#ffffff" />
+                        <!-- Plusz: két vonal, kerek véggel -->
+                        <path d="M20 12 v16 M12 20 h16" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
+                    </svg>
                 </div>
             </div>
-            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="400">
+            <div style="grid-column: span 1;" class="csempe-kicsi" data-aos="fade-up" data-aos-delay="400"
+                data-modal-target="#modal-kozossegi">
                 <div class="text-container" style="background: 
                     linear-gradient(rgba(34, 195, 115, 0.75), rgba(34, 195, 115, 0.85)), /* zöld overlay */
                     url('./assets/kozossegi.jpg') center/cover no-repeat; background-position: right;">
@@ -2149,10 +2337,277 @@
                         <h3>Közösségi Adatok</h3>
                         <p class="description">Árak nyomonkvetése a legjobb beszerzési időpontok megtalálásához.</p>
                     </div>
+                    <svg class="plusz" width="40" height="40" viewBox="0 0 40 40" aria-label="Add" role="img">
+                        <!-- Kör -->
+                        <circle cx="20" cy="20" r="18" fill="#ffffff" />
+                        <!-- Plusz: két vonal, kerek véggel -->
+                        <path d="M20 12 v16 M12 20 h16" stroke="#000000" stroke-width="3.5" stroke-linecap="round" />
+                    </svg>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Kifejtős részek -->
+
+    <div id="modal-arfigyelo" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close></div>
+
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" onclick=closeModal aria-label="Bezárás" data-close>
+                <!-- kis X ikon -->
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <header class="modal-header">
+                <p class="eyebrow">Visszajelzés</p>
+                <h2 id="modal-title">Árfigyelő</h2>
+            </header>
+
+            <section class="modal-body">
+                <!-- ide mehet kép + szöveg blokk -->
+                <div class="hero-card">
+                    <div class="hero-copy">
+                        <h3>Nagyon menő</h3>
+                        <p>Ide lehet tenni dolgoka</p>
+                    </div>
+                    <img src="./assets/iphone-demo.jpg" alt="" />
+                </div>
+                <!-- tetszőleges további tartalom -->
+            </section>
+        </div>
+    </div>
+
+    <div id="modal-webshop" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close></div>
+
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" onclick=closeModal aria-label="Bezárás" data-close>
+                <!-- kis X ikon -->
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <header class="modal-header">
+                <p class="eyebrow">Visszajelzés</p>
+                <h2 id="modal-title">Kereskedői akciók</h2>
+            </header>
+
+            <section class="modal-body">
+                <!-- ide mehet kép + szöveg blokk -->
+                <div class="hero-card">
+                    <div class="hero-copy">
+                        <h3>Nagyon menő</h3>
+                        <p>Ide lehet tenni dolgoka</p>
+                    </div>
+                    <img src="./assets/iphone-demo.jpg" alt="" />
+                </div>
+                <!-- tetszőleges további tartalom -->
+            </section>
+        </div>
+    </div>
+
+    <div id="modal-kereskedoi" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close></div>
+
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" onclick=closeModal aria-label="Bezárás" data-close>
+                <!-- kis X ikon -->
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <header class="modal-header">
+                <p class="eyebrow">Visszajelzés</p>
+                <h2 id="modal-title">Kereskedői akciók</h2>
+            </header>
+
+            <section class="modal-body">
+                <!-- ide mehet kép + szöveg blokk -->
+                <div class="hero-card">
+                    <div class="hero-copy">
+                        <h3>Nagyon menő</h3>
+                        <p>Ide lehet tenni dolgoka</p>
+                    </div>
+                    <img src="./assets/iphone-demo.jpg" alt="" />
+                </div>
+                <!-- tetszőleges további tartalom -->
+            </section>
+        </div>
+    </div>
+
+    <div id="modal-keszletkezeles" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close></div>
+
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" onclick=closeModal aria-label="Bezárás" data-close>
+                <!-- kis X ikon -->
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <header class="modal-header">
+                <p class="eyebrow">Visszajelzés</p>
+                <h2 id="modal-title">Keszletkezelés</h2>
+            </header>
+
+            <section class="modal-body">
+                <!-- ide mehet kép + szöveg blokk -->
+                <div class="hero-card">
+                    <div class="hero-copy">
+                        <h3>Nagyon menő</h3>
+                        <p>Ide lehet tenni dolgoka</p>
+                    </div>
+                    <img src="./assets/iphone-demo.jpg" alt="" />
+                </div>
+                <!-- tetszőleges további tartalom -->
+            </section>
+        </div>
+    </div>
+
+
+    <div id="modal-meteorologia" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close></div>
+
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" onclick=closeModal aria-label="Bezárás" data-close>
+                <!-- kis X ikon -->
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <header class="modal-header">
+                <p class="eyebrow">Visszajelzés</p>
+                <h2 id="modal-title">Meteorológia</h2>
+            </header>
+
+            <section class="modal-body">
+                <!-- ide mehet kép + szöveg blokk -->
+                <div class="hero-card">
+                    <div class="hero-copy">
+                        <h3>Nagyon menő</h3>
+                        <p>Ide lehet tenni dolgoka</p>
+                    </div>
+                    <img src="./assets/iphone-demo.jpg" alt="" />
+                </div>
+                <!-- tetszőleges további tartalom -->
+            </section>
+        </div>
+    </div>
+
+    <div id="modal-inputanyag" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close></div>
+
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" onclick=closeModal aria-label="Bezárás" data-close>
+                <!-- kis X ikon -->
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <header class="modal-header">
+                <p class="eyebrow">Visszajelzés</p>
+                <h2 id="modal-title">Inputanyag</h2>
+            </header>
+
+            <section class="modal-body">
+                <!-- ide mehet kép + szöveg blokk -->
+                <div class="hero-card">
+                    <div class="hero-copy">
+                        <h3>Nagyon menő</h3>
+                        <p>Ide lehet tenni dolgoka</p>
+                    </div>
+                    <img src="./assets/iphone-demo.jpg" alt="" />
+                </div>
+                <!-- tetszőleges további tartalom -->
+            </section>
+        </div>
+    </div>
+
+    <div id="modal-kozossegi" class="modal" aria-hidden="true">
+        <div class="modal-backdrop" data-close></div>
+
+        <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+            <button class="modal-close" onclick=closeModal aria-label="Bezárás" data-close>
+                <!-- kis X ikon -->
+                <svg width="18" height="18" viewBox="0 0 24 24">
+                    <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <header class="modal-header">
+                <p class="eyebrow">Visszajelzés</p>
+                <h2 id="modal-title">Közösségi Adatok</h2>
+            </header>
+
+            <section class="modal-body">
+                <!-- ide mehet kép + szöveg blokk -->
+                <div class="hero-card">
+                    <div class="hero-copy">
+                        <h3>Nagyon menő</h3>
+                        <p>Ide lehet tenni dolgoka</p>
+                    </div>
+                    <img src="./assets/iphone-demo.jpg" alt="" />
+                </div>
+                <!-- tetszőleges további tartalom -->
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Nyitás: bármely elem data-modal-target-tel
+        document.addEventListener('click', (e) => {
+            const opener = e.target.closest('[data-modal-target]');
+            if (!opener) return;
+
+            const sel = opener.getAttribute('data-modal-target');
+            const modal = document.querySelector(sel);
+            if (!modal) return;
+
+            openModal(modal);
+        });
+
+        // Zárás: [data-close], ESC, vagy backdrop katt
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('[data-close]')) {
+                closeModal(e.target.closest('.modal'));
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('.modal.is-open').forEach(closeModal);
+            }
+        });
+
+        function openModal(modal) {
+            modal.classList.add('is-open');
+            document.documentElement.style.overflow = 'hidden'; // body lock
+            // fókusz a close gombra
+            const closeBtn = modal.querySelector('.modal-close');
+            closeBtn && closeBtn.focus();
+        }
+
+        function closeModal(modal) {
+            if (!modal) return;
+            modal.classList.remove('is-open');
+            document.documentElement.style.overflow = ''; // unlock
+        }
+
+        document.addEventListener('click', (e) => {
+            const btn = e.target.closest('[data-close]');
+            if (btn) {
+                closeModal(btn.closest('.modal'));
+            }
+        });
+    </script>
 
 
     <style>
@@ -2260,24 +2715,29 @@
         .map-image .dot.aos-animate {
             opacity: 1;
             transform: scale(1);
-            }
+        }
+
         @media (max-width: 1240px) {
             .map-text {
                 margin-left: 30px;
-                
+
             }
         }
 
         @media (max-width: 970px) {
             .map-text {
                 margin-right: 10px in !important;
-                
+
             }
         }
 
         @media (max-width: 890px) {
             .map {
                 padding: 24px 0 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
 
             .map .map-image {
@@ -2350,6 +2810,10 @@
                 transform: none;
                 transition: opacity .35s, transform .35s;
             }
+
+            .map-text h2 {
+                text-align: center;
+            }
         }
     </style>
 
@@ -2361,13 +2825,15 @@
                 <p data-aos="fade-left" class="section-subtitle">Placeholder szöveg -Kapcsolatot építünk ki a mindennapi
                     készletkezeléseddel, így a megrendelésed papírmentesen az ügyviteli folyamatod része lehet. *Csak
                     AgroVIR Global ügyfeleknek elérhető</p>
-                <button onclick="window.location.href='https://webforms.pipedrive.com/f/1C8dRNq8DKDxck7wg8rXcCfJXMzJc4x3yQa6PTuQNtIrcU46XVvZYMw3zkyOTluVB'" data-aos="fade-left">CSATLAKOZOM KERESKEDŐKÉNT</button>
+                <button
+                    onclick="window.location.href='https://webforms.pipedrive.com/f/1C8dRNq8DKDxck7wg8rXcCfJXMzJc4x3yQa6PTuQNtIrcU46XVvZYMw3zkyOTluVB'"
+                    data-aos="fade-left">CSATLAKOZOM KERESKEDŐKÉNT</button>
             </div>
             <div class="map-image-mobile" data-aos="fade-left" data-aos-once="true">
                 <svg viewBox="0 0 1000 600" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
                     <image href="./assets/map.png" x="0" y="0" width="1000" height="600"
                         preserveAspectRatio="xMidYMid meet" />
-                  
+
                     <image class="dot" href="./assets/ellipse.png" x="600" y="420" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="1400" data-aos-anchor=".map-image-mobile" />
 
@@ -2403,7 +2869,7 @@
                     <image class="dot" href="./assets/ellipse.png" x="240" y="190" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="2600" data-aos-anchor=".map-image-mobile" />
 
-                        <image class="dot" href="./assets/ellipse.png" x="250" y="300" width="35" height="35"
+                    <image class="dot" href="./assets/ellipse.png" x="250" y="300" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="2000" data-aos-anchor=".map-image-mobile" />
                     <image class="dot" href="./assets/ellipse.png" x="600" y="400" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="2100" data-aos-anchor=".map-image-mobile" />
@@ -2418,7 +2884,7 @@
                 <svg viewBox="0 0 1000 600" width="100%" height="auto" preserveAspectRatio="xMidYMid meet">
                     <image href="./assets/map.png" x="0" y="0" width="1000" height="600"
                         preserveAspectRatio="xMidYMid meet" />
-                        <image class="dot" href="./assets/ellipse.png" x="250" y="300" width="35" height="35"
+                    <image class="dot" href="./assets/ellipse.png" x="250" y="300" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="1000" data-aos-anchor=".map-image" />
                     <image class="dot" href="./assets/ellipse.png" x="600" y="400" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="1100" data-aos-anchor=".map-image" />
@@ -2449,9 +2915,9 @@
                         data-aos="zoom-in" data-aos-delay="1800" data-aos-anchor=".map-image" />
                     <image class="dot" href="./assets/ellipse.png" x="720" y="110" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="1900" data-aos-anchor=".map-image" />
-                        <image class="dot" href="./assets/ellipse.png" x="600" y="96" width="35" height="35"
+                    <image class="dot" href="./assets/ellipse.png" x="600" y="96" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="1900" data-aos-anchor=".map-image" />
-                    
+
                     <image class="dot" href="./assets/ellipse.png" x="200" y="170" width="35" height="35"
                         data-aos="zoom-in" data-aos-delay="1900" data-aos-anchor=".map-image" />
 
@@ -2546,7 +3012,7 @@
     <section class="footer" style="background: 
     linear-gradient(rgba(0, 80, 51, 0.75), rgba(0, 47, 28, 0.85)), /* zöld overlay */
     url('./assets/hatter.jpg') center/cover no-repeat; background-position: right;">
-         <img src="./assets/input-colored-standalone.png" />
+        <img src="./assets/input-colored-standalone.png" />
     </section>
 
 
