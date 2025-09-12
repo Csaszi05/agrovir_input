@@ -3176,139 +3176,193 @@ Emellett az árfigyelő rendszeresen összeveti az inputanyagok ajánlatait a pi
         }
     </style>
 
-<section class="pricing" id="pricing">
-    <div class="pricing-container" data-aos="fade-up">
-      <h2 class="pricing-title">Egyszerű és átlátható ár</h2>
-      <p class="pricing-subtitle">Az Input+ szolgáltatás éves díja</p>
+<!-- ✨ PRICING / INPUT+ DÍJ -->
+<section class="pricing rev-pricing" id="pricing">
+    <div class="rev-pricing-shell" data-aos="fade-up">
   
-      <div class="pricing-card">
-        <div class="pricing-header">
-          <img src="./assets/price-tag.png" alt="Pricing Icon" style="width: 50px; height: 50px;">
-          <h3 class="pricing-price">150.000 Ft <span>+ ÁFA / év</span></h3>
+      <header class="rev-pricing-head">
+        <h2 class="rev-title">Input+ éves előfizetés</h2>
+        <p class="rev-subtitle">Minden modul, frissítés és támogatás egy csomagban.</p>
+      </header>
+  
+      <article class="rev-price-card">
+        <!-- dísz körök -->
+        <span class="orb orb-a"></span>
+        <span class="orb orb-b"></span>
+  
+        <div class="rev-price-top">
+        
+          <div class="rev-price-row">
+            <img src="./assets/price-tag.png" alt="" class="rev-price-ico" />
+            <div class="rev-nums">
+              <div class="rev-amount">
+                <span class="rev-currency">Ft</span>
+                <span class="rev-value">150&nbsp;000</span>
+              </div>
+              <div class="rev-meta">+ ÁFA / év</div>
+            </div>
+          </div>
         </div>
   
-        <ul class="pricing-features">
-          <li>✔ Korlátlan hozzáférés a platformhoz</li>
-          <li>✔ Árfigyelő és készletkezelő modulok</li>
-          <li>✔ Közösségi adatok és trendek</li>
-          <li>✔ Részletes riportok és kimutatások</li>
-          <li>✔ Folyamatos frissítések és támogatás</li>
+        <ul class="rev-feats">
+          <li>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6L9 17l-5-5" /></svg>
+            Korlátlan hozzáférés a platformhoz
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
+            Árfigyelő &amp; készletkezelő modulok
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
+            Közösségi adatok, trendek és összehasonlítás
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
+            Részletes riportok és kimutatások
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5" /></svg>
+            Folyamatos frissítések és ügyféltámogatás
+          </li>
         </ul>
   
-        <a href="https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp"
-           class="pricing-btn">KIPRÓBÁLOM</a>
-      </div>
+        <div class="rev-cta-row">
+          <a class="rev-btn rev-btn-primary"
+             href="https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp">
+            Kipróbálom
+          </a>
+        </div>
+  
+        
+      </article>
     </div>
   </section>
   
   <style>
-  .pricing {
-    background: linear-gradient(135deg, #f8fdfb, #eafaf2);
-    padding: 5rem 1rem;
-    display: flex;
-    justify-content: center;
-    text-align: center;
+  /* a színek a meglévő változóidra támaszkodnak */
+  .rev-pricing{
+    position: relative;
+    padding: 68px 16px 84px;
+    background:
+      radial-gradient(1200px 600px at 20% -10%, rgba(34,195,115,.18), transparent 60%),
+      radial-gradient(900px 500px at 90% 110%, rgba(34,195,115,.14), transparent 60%),
+      linear-gradient(135deg, #f7fff9, #eefaf4);
+  }
+  .rev-pricing-shell{ max-width: 1100px; margin: 0 auto; }
+  
+  .rev-pricing-head{ text-align:center; margin-bottom: 24px; }
+  .rev-eyebrow{
+    display:inline-block; padding: 6px 12px; border-radius: 999px;
+    background: rgba(34,195,115,.12); color: #0f7e53; font-weight: 800; letter-spacing: .04em;
+    border: 1px solid #c9f0dd;
+  }
+  .rev-title{
+    margin: 10px 0 6px;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900; letter-spacing:.01em; color: var(--rev-dark, #0B0D0F);
+  }
+  .rev-subtitle{ color:#4a5a68; max-width: 720px; margin: 0 auto; }
+  
+  /* kártya – üveg + glow */
+  .rev-price-card{
+    position: relative;
+    margin: 26px auto 0;
+    max-width: 860px;
+    background: linear-gradient(180deg, rgba(255,255,255,.82), rgba(255,255,255,.92));
+    backdrop-filter: saturate(140%) blur(10px);
+    border: 1px solid rgba(0,0,0,.06);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(34,195,115,.20), 0 12px 38px rgba(0,0,0,.08);
+    padding: clamp(18px, 3vw, 28px);
+    overflow: hidden;
   }
   
-  .pricing-container {
-    max-width: 900px;
-    width: 100%;
+  /* dísz orbs */
+  .rev-price-card .orb{
+    position:absolute; border-radius:50%;
+    filter: blur(18px); opacity:.45; pointer-events:none;
+  }
+  .orb-a{ width:220px; height:220px; background: radial-gradient(var(--rev-green,#22C373), transparent 70%);
+    top:-60px; left:-60px; }
+  .orb-b{ width:260px; height:260px; background: radial-gradient(#6ee7b7, transparent 65%);
+    bottom:-80px; right:-80px; }
+  
+  /* top rész */
+  .rev-price-top{
+    display:flex; align-items:center; justify-content:center; gap: 16px; flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .rev-pill{
+    background: #e9f8f1; color:#0f7e53; border:1px solid #c3efd9;
+    font-weight:800; padding: 8px 12px; border-radius: 12px;
+  }
+  .rev-price-row{ display:flex; align-items:center; gap:14px; }
+  .rev-price-ico{ width: 46px; height: 46px; object-fit: contain; filter: drop-shadow(0 6px 14px rgba(34,195,115,.25)); }
+  
+  .rev-nums{ display:flex; flex-direction:column; }
+  .rev-amount{
+    display:flex; align-items:baseline; gap: 8px;
+    line-height: 1; color: var(--rev-dark,#0B0D0F);
+  }
+  .rev-currency{ font-weight:800; font-size: clamp(18px, 1.8vw, 20px); opacity:.9; }
+  .rev-value{ font-weight:900; font-size: clamp(36px, 6vw, 56px); letter-spacing:.01em; }
+  .rev-meta{ color:#4a5a68; font-weight:700; margin-top: 4px; }
+  .rev-havi{ color:#6a7a86; font-size:.95rem; margin-top: 2px; }
+  
+  /* features */
+  .rev-feats{
+    display:grid; grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 10px 18px; list-style:none; padding: 16px 0 6px; margin: 0;
+  }
+  .rev-feats li{
+    display:flex; align-items:flex-start; gap:10px;
+    background: rgba(255,255,255,.75);
+    border: 1px solid rgba(0,0,0,.06);
+    border-radius: 14px; padding: 10px 12px;
+    color:#1c2420; font-weight:600;
+  }
+  .rev-feats svg{
+    width:20px; height:20px; flex:0 0 20px;
+    color: var(--rev-green,#22C373);
+    stroke: currentColor; stroke-width:3; fill:none;
   }
   
-  .pricing-title {
-    font-size: 2.4rem;
-    font-weight: 800;
-    margin-bottom: .6rem;
-    color: #0B0D0F;
+  /* CTA */
+  .rev-cta-row{
+    display:flex; align-items:center; gap: 14px; flex-wrap: wrap;
+    margin-top: 16px;
+  }
+  .rev-btn-primary{
+    display:inline-flex; align-items:center; justify-content:center;
+    padding:.9rem 1.6rem; border-radius:999px; font-weight:800; text-decoration:none;
+    background: var(--rev-green,#22C373); color:#fff; border:2px solid rgba(255,255,255,.3);
+    box-shadow: 0 10px 28px rgba(34,195,115,.28);
+    transition: transform .18s ease, filter .18s ease;
+  }
+  .rev-btn-primary:hover{ transform: translateY(-1px); filter: brightness(1.05); }
+  .rev-link{ color:#0f7e53; font-weight:800; text-decoration: underline; }
+  
+  /* guarantee */
+  .rev-guarantee{
+    margin-top: 8px; display:flex; align-items:center; gap:10px;
+    background: #f4fbf8; border:1px solid #ccefe0; border-radius: 14px; padding: 10px 12px;
+    color:#2a3b33; font-weight:600;
+  }
+  .rev-guarantee .dot{
+    width:10px; height:10px; border-radius:50%; background: var(--rev-green,#22C373);
+    box-shadow: 0 0 0 6px rgba(34,195,115,.12);
   }
   
-  .pricing-subtitle {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 2.5rem;
+  /* reszponzív */
+  @media (max-width: 900px){
+    .rev-feats{ grid-template-columns: 1fr; }
+    .rev-price-top{ align-items:flex-start; }
   }
-  
-  .pricing-card {
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,.08);
-    padding: 3rem 2rem;
-    transition: transform .3s ease, box-shadow .3s ease;
-  }
-  
-  .pricing-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 50px rgba(0,0,0,.12);
-  }
-  
-  .pricing-header {
-    margin-bottom: 2rem;
-  }
-  
-  .pricing-label {
-    font-weight: 600;
-    color: #22C373;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  
-  .pricing-price {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-top: .8rem;
-    color: #0B0D0F;
-  }
-  .pricing-price span {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #666;
-  }
-  
-  .pricing-features {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 2rem;
-    text-align: left;
-  }
-  .pricing-features li {
-    padding: .5rem 0;
-    font-size: 1rem;
-    color: #333;
-  }
-  
-  .pricing-btn {
-    display: inline-block;
-    color: #fff;
-    font-weight: 700;
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    background: #22C373;
-            border-radius: 30px;
-            color: white;
-            font-family: 'Rubik', sans-serif;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 20px;
-            cursor: pointer;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0px 3px 5px 0px #22C3734D;
-  }
-  .pricing-btn:hover {
-
-  }
-  
-  /* Mobil */
-  @media (max-width: 600px){
-    .pricing-card {
-      padding: 2rem 1.5rem;
-    }
-    .pricing-title {
-      font-size: 2rem;
-    }
-    .pricing-price {
-      font-size: 1.6rem;
-    }
+  @media (max-width: 560px){
+    .rev-pricing{ padding: 48px 14px 64px; }
+    .rev-cta-row{ flex-direction:column; align-items:stretch; }
+    .rev-btn-primary{ width:100%; text-align:center; }
   }
   </style>
 
