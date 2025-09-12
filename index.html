@@ -194,8 +194,9 @@
         /* Carousel Styles */
         .carousel {
             position: relative;
-            height: 600px;
+            height: 102vh!important;
             overflow: hidden;
+            margin-top: -75px;
         }
 
         .carousel-slide {
@@ -232,7 +233,7 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            padding-top: 2rem;
+            margin-top: 2rem;
         }
 
         .carousel-content h1 {
@@ -763,11 +764,11 @@
 
         @media (max-width: 767px) {
             .carousel-content h1 {
-                font-size: 2rem;
+                font-size: 3rem;
             }
 
             .carousel-content p {
-                font-size: 1rem;
+                font-size: 1.2rem;
             }
 
             .carousel-buttons {
@@ -1285,6 +1286,8 @@
         .carousel-slide {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
             gap: 8rem;
         }
 
@@ -1303,11 +1306,346 @@
 
 
 <body>
+    <style>
+        :root {
+  --rev-green: #22C373;
+  --rev-dark: #0B0D0F;
+  --rev-fg: #ffffff;
+  --rev-fg-dark: #101418;
+  --rev-glass: rgba(15, 20, 24, 0.45);
+  --rev-glass-light: rgba(255,255,255,0.75);
+}
+
+.header { display: none !important; }
+
+
+.rev-header {
+  position: sticky; top: 0; z-index: 2000;
+  backdrop-filter: saturate(140%) blur(10px);
+  background: var(--rev-glass);
+  color: var(--rev-fg);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  transition: background .28s ease, color .28s ease, border-color .28s ease, transform .28s ease;
+}
+
+/* topbar */
+.rev-topbar {
+  display: flex; justify-content: center; align-items: center; gap: .6rem;
+  font-size: .9rem; padding: .45rem .75rem;
+  background: linear-gradient(90deg, rgba(34,195,115,.25), rgba(34,195,115,.05));
+  border-bottom: 1px solid rgba(255,255,255,.1);
+}
+.rev-topbar .rev-link { color: #dfffea; text-decoration: underline; }
+
+/* main row */
+.rev-shell {
+  max-width: 1200px; margin: 0 auto; padding: .6rem 1rem;
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 1rem;
+}
+.rev-brand { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; color: inherit; }
+.rev-logo { height: 28px; width: auto; display: block; }
+.rev-title { font-weight: 800; letter-spacing: .02em; }
+
+.rev-nav { display: none; gap: 1.2rem; justify-content: center; }
+@media (min-width: 980px){ .rev-nav{ display: flex; } }
+
+.rev-navlink {
+  position: relative; color: #eaf7f0; text-decoration: none; font-weight: 500; padding: .4rem .2rem;
+}
+.rev-navlink::after{
+  content:""; position:absolute; left:0; bottom:-6px; height:2px; width:0;
+  background: linear-gradient(90deg, var(--rev-green), #6ee7b7);
+  transition: width .22s ease;
+}
+.rev-navlink:hover::after{ width:100%; }
+
+/* actions */
+.rev-cta{ display:flex; align-items:center; gap:.6rem; }
+.rev-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:.55rem 1rem; border-radius:999px; font-weight:700; text-decoration:none;
+  background: var(--rev-green); color:#fff; border:2px solid rgba(255,255,255,.2);
+  box-shadow: 0 6px 16px rgba(34,195,115,.25);
+}
+.rev-btn:hover{ filter: brightness(1.03); }
+
+.rev-btn-block{ width:100%; }
+
+.rev-lang{
+  background: transparent; border:1.5px solid rgba(255,255,255,.25); color:#fff;
+  padding:.45rem .7rem; border-radius:999px; font-weight:700; letter-spacing:.06em; cursor:pointer;
+}
+.rev-burger{
+  display:flex; flex-direction:column; gap:4px; background:transparent; border:0; cursor:pointer; padding:.4rem;
+}
+.rev-burger span{ width:26px; height:3px; background:#fff; display:block; border-radius:2px; }
+
+@media (min-width: 980px){ .rev-burger{ display:none; } }
+
+/* progress bar */
+.rev-progress{
+  position:absolute; left:0; bottom:0; height:2px; width:0%;
+  background: linear-gradient(90deg, var(--rev-green), #C6F6D5);
+  transition: width .12s linear;
+}
+
+/* mobile drawer */
+.rev-scrim{
+  position: fixed; inset:0; background: rgba(0,0,0,.45);
+  opacity:0; pointer-events:none; transition:opacity .25s ease; z-index: 1999;
+}
+.rev-drawer{
+  position: fixed; inset:0 auto 0 0; width: min(84vw, 420px);
+  background: var(--rev-glass-light); color: var(--rev-fg-dark);
+  backdrop-filter: blur(18px); transform: translateX(-102%);
+  transition: transform .28s cubic-bezier(.22,.61,.36,1);
+  z-index: 2001; display:flex; flex-direction:column;
+}
+.rev-drawer-head{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 16px 18px; font-weight:800;
+  border-bottom:1px solid rgba(0,0,0,.08);
+  z-index: 100;
+}
+.rev-close{ background:#101418; color:#fff; border:0; width:34px; height:34px; border-radius:50%; cursor:pointer; }
+.rev-drawer-body{ padding: 8px 14px 18px; display:flex; flex-direction:column; gap:8px; }
+.rev-drawer-link{
+  display:block; padding:14px 12px; border-radius:12px; text-decoration:none; font-weight:700;
+  color:var(--rev-fg-dark); background: rgba(255,255,255,1);
+  border:1px solid rgba(0,0,0,.50);
+}
+.rev-drawer-link:active{ transform: translateY(1px); }
+.rev-drawer-cta{ margin-top:12px; }
+
+/* header state changes on scroll */
+.rev-header.is-solid{
+  background: rgba(255,255,255,.88); color: var(--rev-fg-dark);
+  border-color: rgba(0,0,0,.06);
+}
+.rev-header.is-solid .rev-navlink{ color:#1d2a22; }
+.rev-header.is-solid .rev-burger span{ background:#1d2a22; }
+.rev-header.is-solid .rev-lang{ color:#0B0D0F; border-color: rgba(0,0,0,.12); }
+.rev-header.is-solid .rev-btn{ border-color: rgba(0,0,0,.85); }
+
+/* hide on scroll down, show on up */
+.rev-header.is-hide{ transform: translateY(-100%); }
+
+/* reduce motion respect */
+@media (prefers-reduced-motion: reduce){
+  .rev-header, .rev-drawer, .rev-progress, .rev-scrim { transition: none !important; }
+}
+
+@media (max-width: 979px){
+  .rev-shell{
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    width: 100%;
+  }
+  .rev-btn{ display:none; } /* opcionális */
+
+  .rev-header {
+    position: fixed; /* ne legyen sticky/fixed */
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between !important;
+  }
+}
+
+/* alap: üveg */
+.rev-drawer{
+  background: var(--rev-glass-light);
+  backdrop-filter: blur(18px);
+}
+/* nyitva: legyen tömör fehér és vegyük le a blur-t */
+.rev-drawer.is-open{
+  background: #fff;
+  color: var(--rev-fg-dark);
+  backdrop-filter: none;
+}
+
+/* ha szeretnéd, a drawer head legyen mindig solid (ikonok láthatók maradjanak) */
+.rev-drawer.is-open .rev-drawer-head{
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.08);
+}
+    </style>
+    <!-- ⚡ REV Header -->
+<header class="rev-header" data-rev-header>
+  
+    <!-- main row -->
+    <div class="rev-shell">
+      <a href="#carousel" class="rev-brand">
+        <img src="./assets/input-white-colored.png" alt="Input+" class="rev-logo" />
+      </a>
+  
+      <!-- desktop nav -->
+      <nav class="rev-nav">
+        <a href="#csempek" class="rev-navlink">Funkciók</a>
+        <a href="#map" class="rev-navlink">Hálózat</a>
+        <a href="#faq" class="rev-navlink">GYIK</a>
+        <a href="https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp"
+           class="rev-navlink">Kapcsolat</a>
+      </nav>
+  
+      <!-- actions -->
+      <div class="rev-cta">
+        <a class="rev-btn" 
+           href="https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp">
+          Kipróbálom
+        </a>
+        <button class="rev-burger" aria-label="Menü megnyitása" data-menu-open>
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  
+    <!-- scroll progress -->
+    <div class="rev-progress" data-progress></div>
+  
+    <!-- mobile drawer -->
+    <aside class="rev-drawer" data-drawer aria-hidden="true">
+      <div class="rev-drawer-head">
+        <span>Menü</span>
+        <button class="rev-close" aria-label="Menü bezárása" data-menu-close>&times;</button>
+      </div>
+      <div class="rev-drawer-body">
+        <a href="#csempek" class="rev-drawer-link" data-menu-close>Funkciók</a>
+        <a href="#map" class="rev-drawer-link" data-menu-close>Hálózat</a>
+        <a href="#faq" class="rev-drawer-link" data-menu-close>GYIK</a>
+        <a href="https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp"
+           class="rev-drawer-link">Kapcsolat</a>
+  
+        <div class="rev-drawer-cta">
+          <a class="rev-btn rev-btn-block" 
+             href="https://webforms.pipedrive.com/f/1C9VXyeVBah08aTVM9ESrJqIaLLdJzpb3eIcoHdjqpGdkzze3whuqAfqvyR3cyVJp">
+            Kipróbálom
+          </a>
+        </div>
+      </div>
+    </aside>
+    <div class="rev-scrim" data-scrim aria-hidden="true"></div>
+  </header>
+
+  <script>
+    (() => {
+      const header   = document.querySelector('[data-rev-header]');
+      const scrim    = document.querySelector('[data-scrim]');
+      const drawer   = document.querySelector('[data-drawer]');
+      const openBtn  = document.querySelector('[data-menu-open]');
+      const closeBtn = document.querySelector('[data-menu-close]');
+      const progress = document.querySelector('[data-progress]');
+      const hero     = document.querySelector('#carousel');
+    
+      // 1) progress sáv
+      const setProgress = () => {
+        const scroll = window.scrollY;
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = max > 0 ? (scroll / max) * 100 : 0;
+        progress.style.width = pct + '%';
+      };
+      setProgress();
+    
+      // 2) solid header, ha lejjebb gördülünk a hero-ról
+      let solid = false;
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          const inView = e.isIntersecting && e.intersectionRatio > 0.15;
+          if (inView && solid) { header.classList.remove('is-solid'); solid = false; }
+          else if (!inView && !solid) { header.classList.add('is-solid'); solid = true; }
+        });
+      }, { threshold: [0, .15, .5, 1] });
+      if (hero) io.observe(hero);
+    
+      // 3) hide-on-scroll-down
+      // 3) hide-on-scroll-down (mobilon is megbízhatóbb)
+let lastY = window.scrollY;
+const SHOW_TOP_Y = 80;     // ennyi alatt mindig látszódjon
+const DELTA = 5;           // ennyinél kisebb mozgásra ne reagáljunk
+let drawerOpen = false;    // ha a drawer nyitva, ne rejtsük a headert
+
+const onScroll = () => {
+  setProgress();
+  if (drawerOpen) return;  // nyitott menünél ne bújkáljon a header
+
+  const y = window.scrollY;
+  const dy = y - lastY;
+
+  const goingDown = dy > DELTA && y > SHOW_TOP_Y;
+  const shouldShow = dy < -DELTA || y <= SHOW_TOP_Y;
+
+  if (goingDown) header.classList.add('is-hide');
+  if (shouldShow) header.classList.remove('is-hide');
+
+  lastY = y;
+};
+window.addEventListener('scroll', onScroll, { passive: true });
+    
+      // 4) mobil drawer
+      function openDrawer(){
+  drawer.classList.add('is-open');
+  drawer.style.transform = 'translateX(0)';
+  scrim.style.opacity = '1';
+  scrim.style.pointerEvents = 'auto';
+  drawer.setAttribute('aria-hidden', 'false');
+  document.documentElement.style.overflow = 'hidden';
+  drawerOpen = true;                      // <<< NE bújjon el a header
+  header.classList.remove('is-hide');     // biztosan látszódjon
+}
+function closeDrawer(){
+  drawer.classList.remove('is-open');
+  drawer.style.transform = 'translateX(-102%)';
+  scrim.style.opacity = '0';
+  scrim.style.pointerEvents = 'none';
+  drawer.setAttribute('aria-hidden', 'true');
+  document.documentElement.style.overflow = '';
+  drawerOpen = false;
+}
+    
+      openBtn?.addEventListener('click', openDrawer);
+      closeBtn?.addEventListener('click', closeDrawer);
+      scrim?.addEventListener('click', closeDrawer);
+    
+      // linkre katt mobilon zárjon
+      drawer.addEventListener('click', (e)=>{
+        const link = e.target.closest('[data-menu-close], .rev-drawer-link');
+        if(link) closeDrawer();
+      });
+    
+      // ESC zárás
+      document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeDrawer(); });
+    
+      // 5) aktív nav jelölés (section in-view)
+      const navMap = new Map([
+        ['#csempek', document.querySelector('.rev-nav a[href="#csempek"]')],
+        ['#map',     document.querySelector('.rev-nav a[href="#map"]')],
+        ['#faq',     document.querySelector('.rev-nav a[href="#faq"]')],
+      ]);
+      const sections = [...navMap.keys()]
+        .map(id => document.querySelector(id))
+        .filter(Boolean);
+    
+      const highlight = (id) => {
+        document.querySelectorAll('.rev-navlink').forEach(a=>a.classList.remove('is-active'));
+        navMap.get(id)?.classList.add('is-active');
+      };
+    
+      const ioNav = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          if(e.isIntersecting && e.intersectionRatio > 0.4){
+            highlight('#'+e.target.id);
+          }
+        });
+      }, { threshold: [0.4] });
+      sections.forEach(sec=>ioNav.observe(sec));
+    })();
+    </script>
     <!-- Hero -->
     <section class="carousel" id="carousel">
         <div class="carousel-slide active"
             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/2132171/pexels-photo-2132171.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
-            <img class="logo" src="./assets/input-white-colored.png" />
             <div class="container">
                 <div class="carousel-content">
                     <h1>Az agrárium árukeresője</h1>
@@ -1320,7 +1658,6 @@
 
         <div class="carousel-slide"
             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1595108/pexels-photo-1595108.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
-            <img class="logo" src="./assets/input-white-colored.png" />
             <div class="container">
                 <div class="carousel-content">
                     <h1>A legkedvezőbb beszerzési árak</h1>
@@ -1333,7 +1670,6 @@
 
         <div class="carousel-slide"
             style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1920&h=800&fit=crop')">
-            <img class="logo" src="./assets/input-white-colored.png" />
             <div class="container">
                 <div class="carousel-content">
                     <h1>Országos lefedettség</h1>
