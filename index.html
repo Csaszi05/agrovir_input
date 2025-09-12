@@ -2067,6 +2067,7 @@ function closeDrawer(){
             padding-bottom: 5rem;
             align-items: center;
             overflow: hidden;
+            padding-top: 3rem;
         }
 
         .csempek-container {
@@ -2261,6 +2262,7 @@ function closeDrawer(){
             .csempek {
                 display: block;
                 padding-bottom: 3rem;
+                
             }
 
 
@@ -2414,6 +2416,8 @@ function closeDrawer(){
                 position: static;
                 margin-top: 15px;
             }
+
+        
         }
 
         .csempe-kicsi .text-container .plusz {
@@ -2470,6 +2474,7 @@ function closeDrawer(){
             opacity: 0;
             transform: translateY(12px) scale(.98);
             transition: transform .35s cubic-bezier(.22, .61, .36, 1), opacity .35s ease;
+            margin-top: 10vh !important;
         }
 
         /* Nyitott állapot animáció végállapota */
@@ -2537,6 +2542,26 @@ function closeDrawer(){
             }
         }
 
+        @media (max-width: 768px){
+            .csempe-kicsi .text-container .plusz {
+            position: absolute;
+            top: 78%;
+            left: 90%;
+        }
+
+        .csempe-kicsi .text-container .plusz-k {
+            position: absolute;
+            top: 78%;
+            left: 90%;
+        }
+
+        .plusz-l {
+            position: absolute;
+            top: 78%;
+            left: 90%;
+        }
+        }
+
         /* Kevesebb mozgás beállítás tisztelete */
     </style>
     <!-- Csempék -->
@@ -2548,8 +2573,7 @@ function closeDrawer(){
                 <div class="text-container">
                     <p class="uppertext">Átlátható beszerzés</p>
                     <h3>Árfigyelő funkció</h3>
-                    <p>Megmutatjuk milyen ártrendek várhatók és milyenárakon lehet most beszerezni az inputanyagokat.</p>
-                    <p class="hovertext">Ez a szöveg fog megjelenni ha rávisszük az egeret a vagy
+                    <p>Megmutatjuk milyen ártrendek várhatók és milyenárakon lehet most </p>
                     </p>
                 </div>
                 <div class="img-container" style="background: 
