@@ -2395,6 +2395,12 @@ function closeDrawer(){
                 border-radius: 0 0 10px 10px;
             }
 
+            .csempe-nagy p, .csempe-kicsi p {
+                font-size: 15px;
+                line-height: 1.6;
+                width: 90%;
+            }
+
             .csempe-nagy .text-container {
                 margin: 0;
                 padding: 5px;
@@ -2419,6 +2425,17 @@ function closeDrawer(){
             }
 
         
+        }
+
+        @media (max-width: 510px) {
+         .description
+         {
+            display: none;
+         }
+        }
+
+        @media (max-width: 480px) {
+
         }
 
         .csempe-kicsi .text-container .plusz {
@@ -2574,7 +2591,7 @@ function closeDrawer(){
                 <div class="text-container">
                     <p class="uppertext">Átlátható beszerzés</p>
                     <h3>Árfigyelő funkció</h3>
-                    <p>Első kézből ismerheted meg a piacon elérhető inputanyagok árait. Az Árfigyelő funkcióval nyomon követheted az ártrendeket,
+                    <p class="description">Az Árfigyelő funkcióval nyomon követheted az ártrendeket,
  előrejelzéseket kapsz a várható változásokról, így a legjobb pillanatokban vásárolhatsz.</p>
                     </p>
                 </div>
@@ -2631,8 +2648,8 @@ function closeDrawer(){
                 <div class="text-container">
                     <p class="uppertext">Itt ki fog jönni a matek</p>
                     <h3>Beszerzési sikeresség</h3>
-                    <p>Segítünk optimalizálni a beszerzéseidet: megmutatjuk, mikor és milyen áron vásárolnak mások, 
-és hogyan teljesítesz hozzájuk képest. A Beszerzési sikeresség funkcióval azt is láthatod, mennyit spórolsz egy átlagos piaci szereplőhöz viszonyítva.</p>
+                    <p class="description">Segítünk optimalizálni a beszerzéseidet: megmutatjuk, mikor és milyen áron vásárolnak mások, 
+és hogyan teljesítesz hozzájuk képest.</p>
 
                 </div>
                 <div class="img-container" style="background: 
