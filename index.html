@@ -3845,15 +3845,42 @@ kézhezvételétől számított 14 napon belül jelezheted, ha mégsem szeretné
 
     <style>
         .footer {
+            position: relative;
             width: 100%;
             height: 20rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-direction: column;
+            padding: 2rem 1rem 4rem;
         }
 
         .footer img {
             height: 3rem;
+            
+        }
+        .footer-links {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 2rem;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #22C373;
         }
     </style>
 
@@ -3862,6 +3889,11 @@ kézhezvételétől számított 14 napon belül jelezheted, ha mégsem szeretné
     linear-gradient(rgba(0, 80, 51, 0.75), rgba(0, 47, 28, 0.85)), /* zöld overlay */
     url('./assets/hatter.jpg') center/cover no-repeat; background-position: right;">
         <img src="./assets/input-colored-standalone.png" />
+        <div class="footer-links">
+            <a href="./files/adatkezelesi_tajekoztato.pdf" target="_blank">Adatvédelmi tájékoztató</a>
+            <a href="./files/altalanos_szerzodesi_feltetelek.pdf" target="_blank">ÁSZF</a>
+            <a href="./files/ellalasi_nyilatkozat.pdf" target="_blank">Elállási nyilatkozat</a>
+        </div>
     </section>
 
 
